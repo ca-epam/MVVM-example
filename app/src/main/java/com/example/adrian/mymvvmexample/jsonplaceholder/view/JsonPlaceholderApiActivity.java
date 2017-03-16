@@ -1,5 +1,6 @@
 package com.example.adrian.mymvvmexample.jsonplaceholder.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -15,6 +16,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlaceholderApiView {
+
+    @BindView(R.id.btnOpenJsonPlaceholderApiList)
+    Button btnOpenJsonPlaceholderApiList;
 
     @BindView(R.id.btnFindAllPost)
     Button btnFindAllPost;
@@ -48,6 +52,12 @@ public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlac
         ButterKnife.bind(this);
         JsonPlaceholderApiComponent.Injector.buildComponent(this).inject(this);
 
+    }
+
+    @OnClick(R.id.btnOpenJsonPlaceholderApiList)
+    public void onClickBtnOpenJsonPlaceholderApiList() {
+        Intent intent = new Intent(JsonPlaceholderApiActivity.this, JsonPlaceholderApiListActivity.class);
+        startActivity(intent);
     }
 
     @OnClick(R.id.btnFindAllPost)
