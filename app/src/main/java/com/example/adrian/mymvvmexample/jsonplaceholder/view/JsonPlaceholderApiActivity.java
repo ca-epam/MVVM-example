@@ -46,7 +46,7 @@ public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlac
 
         ActivityJsonPlaceholderApiBinding activityJsonPlaceholderApiBinding = DataBindingUtil.setContentView(this, R.layout.activity_json_placeholder_api);
 
-        JsonPlaceholderApiHandler jsonPlaceholderApiHandler = new JsonPlaceholderApiHandler();
+        JsonPlaceholderApiHandler jsonPlaceholderApiHandler = new JsonPlaceholderApiHandler(this);
         activityJsonPlaceholderApiBinding.setHandler(jsonPlaceholderApiHandler);
 
     }

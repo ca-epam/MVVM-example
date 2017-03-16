@@ -1,13 +1,23 @@
 package com.example.adrian.mymvvmexample.jsonplaceholder.view;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+
+import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
 
 /**
  * Created by Adrian_Czigany on 3/16/2017.
  */
 
 public class JsonPlaceholderApiHandler {
+
+    private Context context;
+
+    public JsonPlaceholderApiHandler(Context context) {
+        this.context = context;
+    }
 
     private static final String TAG = JsonPlaceholderApiHandler.class.getName();
 
@@ -33,6 +43,8 @@ public class JsonPlaceholderApiHandler {
 
     public void onClickBtnFindAllUser(View view) {
         Log.i(TAG, "onClickBtnFindAllUser method");
+        Intent intent = new Intent(context.getApplicationContext(), UsersActivity.class);
+        context.startActivity(intent);
     }
 
 }

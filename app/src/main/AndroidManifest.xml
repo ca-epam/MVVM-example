@@ -23,7 +23,8 @@
         <activity android:name=".omdb.view.OmdbApiActivity" />
         <activity android:name=".jsonplaceholder.view.JsonPlaceholderApiActivity" />
         <activity android:name=".base.BaseActivity" />
-        <activity android:name=".jsonplaceholder.view.JsonPlaceholderApiListActivity"></activity>
+        <activity android:name=".jsonplaceholder.view.JsonPlaceholderApiListActivity" />
+        <activity android:name=".jpuser.view.UsersActivity"></activity>
     </application>
 
 </manifest>

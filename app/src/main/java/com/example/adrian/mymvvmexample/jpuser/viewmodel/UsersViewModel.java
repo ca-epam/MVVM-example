@@ -1,4 +1,4 @@
-package com.example.adrian.mymvvmexample.jsonplaceholder.viewmodel;
+package com.example.adrian.mymvvmexample.jpuser.viewmodel;
 
 import android.content.Context;
 
@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Adrian_Czigany on 3/16/2017.
  */
 
-public class UserViewModel {
+public class UsersViewModel {
 
     private List<User> users;
 
