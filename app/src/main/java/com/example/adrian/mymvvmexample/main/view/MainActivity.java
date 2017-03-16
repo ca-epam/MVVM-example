@@ -81,12 +81,16 @@ public class MainActivity extends BaseActivity implements MainView {
                         startActivity(new Intent(MainActivity.this, JsonPlaceholderApiActivity.class));
                         drawerLayout.closeDrawers();
                         return true;
+                    case R.id.nav_jsonplaceholder_mvvm:
+//                        startActivity(new Intent(MainActivity.this, JsonPlaceholderApiMVVMActivity.class));
+                        drawerLayout.closeDrawers();
+                        return true;
                     case R.id.nav_apteligent:
                         startActivity(new Intent(MainActivity.this, ApteligentActivity.class));
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.nav_movies:
-                        navItemIndex = 4;
+                        navItemIndex = 5;
                         break;
                     default:
                         navItemIndex = 0;

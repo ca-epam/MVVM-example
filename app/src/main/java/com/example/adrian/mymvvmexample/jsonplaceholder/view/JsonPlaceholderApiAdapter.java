@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.databinding.ListItemJsonplaceholderBinding;
-import com.example.adrian.mymvvmexample.jsonplaceholder.model.JsonPlaceholder;
+import com.example.adrian.mymvvmexample.jsonplaceholder.viewmodel.JsonPlaceholder;
 
 import java.util.List;
 

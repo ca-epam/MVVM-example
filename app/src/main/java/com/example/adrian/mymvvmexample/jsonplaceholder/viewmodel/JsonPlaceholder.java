@@ -1,4 +1,4 @@
-package com.example.adrian.mymvvmexample.jsonplaceholder.model;
+package com.example.adrian.mymvvmexample.jsonplaceholder.viewmodel;
 
 import android.databinding.ObservableField;
 

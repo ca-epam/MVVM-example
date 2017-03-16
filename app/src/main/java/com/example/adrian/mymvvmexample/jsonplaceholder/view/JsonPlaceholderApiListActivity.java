@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.adrian.mymvvmexample.R;
-import com.example.adrian.mymvvmexample.jsonplaceholder.model.JsonPlaceholder;
+import com.example.adrian.mymvvmexample.jsonplaceholder.viewmodel.JsonPlaceholder;
 import com.example.adrian.mymvvmexample.utils.JsonPlaceholderTestData;
 
 import java.util.List;

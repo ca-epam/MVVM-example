@@ -1,79 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity">
+<layout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+    <data>
+        <variable
+            name="handler"
+            type="com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiHandler" />
+    </data>
 
-        <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity">
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="JsonPlaceholder Api" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="JsonPlaceholder Api" />
+
+            <Button
+                android:id="@+id/btnOpenJsonPlaceholderApiList"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="JsonPlaceholder list"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/btnOpenJsonPlaceholderApiList"
+            android:id="@+id/btnFindAllPost"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="btnFindAllPost"
+            android:text="posts"
+            android:onClick="@{handler::onClickBtnPost}"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnFindAllComment"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="comments"
+            android:onClick="@{handler::onClickBtnFindAllComment}"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnFindAllAlbum"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="albums"
+            android:onClick="@{handler::onClickBtnFindAllAlbum}"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnFindAllPhoto"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="photos"
+            android:onClick="@{handler::onClickBtnFindAllPhoto}"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnFindAllTodo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="todos"
+            android:onClick="@{handler::onClickBtnFindAllTodo}"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnFindAllUser"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="users"
+            android:onClick="@{handler::onClickBtnFindAllUser}"
             android:textAllCaps="false" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnFindAllPost"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="btnFindAllPost"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btnPostById"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="btnPostByIdPost"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btnFindAllComment"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="btnFindAllComment"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btnFindAllAlbum"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="btnFindAllAlbum"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btnFindAllPhoto"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="btnFindAllPhoto"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btnFindAllTodo"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="btnFindAllTodo"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btnFindAllUser"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="btnFindAllUser"
-        android:textAllCaps="false" />
-
-</LinearLayout>
+</layout>

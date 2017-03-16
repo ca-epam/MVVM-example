@@ -1,6 +1,6 @@
 package com.example.adrian.mymvvmexample.utils;
 
-import com.example.adrian.mymvvmexample.jsonplaceholder.model.JsonPlaceholder;
+import com.example.adrian.mymvvmexample.jsonplaceholder.viewmodel.JsonPlaceholder;
 
 import java.util.ArrayList;
 import java.util.List;
