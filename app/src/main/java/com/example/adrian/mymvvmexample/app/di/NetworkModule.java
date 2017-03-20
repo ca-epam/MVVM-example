@@ -25,7 +25,6 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 @Module
 public class NetworkModule {
 
-    @AppScope
     @Provides
     public Gson provideGson() {
         Gson gson = new GsonBuilder()
@@ -34,7 +33,6 @@ public class NetworkModule {
         return gson;
     }
 
-    @AppScope
     @Provides
     public OkHttpClient providesOkHttpClient() {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
@@ -48,7 +46,6 @@ public class NetworkModule {
         return client;
     }
 
-    @AppScope
     @Provides
     @Named("omdbapi")
     public Retrofit provideRetrofitForOmdbApi(OkHttpClient client) {
@@ -60,7 +57,6 @@ public class NetworkModule {
         return retrofit;
     }
 
-    @AppScope
     @Provides
     @Named("jsonplaceholderapi")
     public Retrofit provideRetrofitForJsonPlaceholderApi(Gson gson, OkHttpClient client) {

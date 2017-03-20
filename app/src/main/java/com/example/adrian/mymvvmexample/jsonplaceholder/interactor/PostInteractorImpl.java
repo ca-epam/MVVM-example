@@ -39,6 +39,7 @@ public class PostInteractorImpl implements PostInteractor {
 
         createPostListObserver();
         createPostObserver();
+
     }
 
     private void createPostListObserver() {

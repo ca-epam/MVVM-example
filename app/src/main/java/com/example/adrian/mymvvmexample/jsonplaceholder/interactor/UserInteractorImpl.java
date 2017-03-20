@@ -29,11 +29,20 @@ public class UserInteractorImpl implements UserInteractor {
     @Inject
     UserService userService;
 
+    public UserInteractorImpl() {
+//        JsonPlaceholderApiComponent.Injector.buildComponent((JsonPlaceholderApiActivity) jsonPlaceholderApiView).inject(this);
+    }
+
     public UserInteractorImpl(JsonPlaceholderApiView jsonPlaceholderApiView) {
         this.jsonPlaceholderApiView = jsonPlaceholderApiView;
 
         JsonPlaceholderApiComponent.Injector.buildComponent((JsonPlaceholderApiActivity) jsonPlaceholderApiView).inject(this);
 
+    }
+
+    @Override
+    public void test() {
+        userService.toString();
     }
 
     @Override

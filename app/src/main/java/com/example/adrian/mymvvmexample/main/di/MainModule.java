@@ -1,5 +1,6 @@
 package com.example.adrian.mymvvmexample.main.di;
 
+import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.main.presenter.MainPresenter;
 import com.example.adrian.mymvvmexample.main.presenter.MainPresenterImpl;
 import com.example.adrian.mymvvmexample.main.view.MainActivity;
@@ -22,13 +23,13 @@ public class MainModule {
     }
 
     @Provides
-    @MainScope
+    @ActivityScope
     MainPresenter provideMainPresenter() {
         return new MainPresenterImpl(provideMainView());
     }
 
     @Provides
-    @MainScope
+    @ActivityScope
     MainView provideMainView() {
         return mainActivity;
     }

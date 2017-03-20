@@ -1,6 +1,7 @@
 package com.example.adrian.mymvvmexample.omdb.di;
 
 import com.example.adrian.mymvvmexample.app.di.AppComponent;
+import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.omdb.presenter.OmdbInteractorImpl;
 import com.example.adrian.mymvvmexample.omdb.presenter.OmdbPresenterImpl;
 import com.example.adrian.mymvvmexample.omdb.service.OmdbApiService;
@@ -13,7 +14,7 @@ import dagger.Component;
  */
 
 @Component(dependencies = AppComponent.class, modules = {OmdbModule.class})
-@OmdbScope
+@ActivityScope
 public interface OmdbComponent {
 
     OmdbApiService omdbApiService();

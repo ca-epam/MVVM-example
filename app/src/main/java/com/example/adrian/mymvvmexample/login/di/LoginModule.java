@@ -1,5 +1,6 @@
 package com.example.adrian.mymvvmexample.login.di;
 
+import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.login.presenter.LoginInteractor;
 import com.example.adrian.mymvvmexample.login.presenter.LoginInteractorImpl;
 import com.example.adrian.mymvvmexample.login.presenter.LoginPresenter;
@@ -24,19 +25,19 @@ public class LoginModule {
     }
 
     @Provides
-    @LoginScope
+    @ActivityScope
     LoginInteractor provideLoginInteractor() {
         return new LoginInteractorImpl();
     }
 
     @Provides
-    @LoginScope
+    @ActivityScope
     LoginPresenter provideLoginPresenter() {
         return new LoginPresenterImpl(provideLoginView(), provideLoginInteractor());
     }
 
     @Provides
-    @LoginScope
+    @ActivityScope
     LoginView provideLoginView() {
         return loginActivity;
     }

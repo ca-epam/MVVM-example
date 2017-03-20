@@ -18,7 +18,7 @@ public class BaseModule {
         this.baseActivity = baseActivity;
     }
 
-    @BaseScope
+    @ActivityScope
     @Provides
     BaseActivity provideBaseActivity() {
         return baseActivity;

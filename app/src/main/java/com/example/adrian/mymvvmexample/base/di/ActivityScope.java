@@ -7,5 +7,5 @@ import javax.inject.Scope;
  */
 
 @Scope
-public @interface BaseScope {
+public @interface ActivityScope {
 }

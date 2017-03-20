@@ -1,5 +1,6 @@
 package com.example.adrian.mymvvmexample.jsonplaceholder.di;
 
+import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.AlbumInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.AlbumInteractorImpl;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.CommentInteractor;
@@ -17,6 +18,8 @@ import com.example.adrian.mymvvmexample.jsonplaceholder.presenter.JsonPlaceholde
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -33,49 +36,57 @@ public class JsonPlaceholderApiBaseModule {
         this.jsonPlaceholderApiActivity = jsonPlaceholderApiActivity;
     }
 
-    @JsonPlaceholderScope
+
+    @ActivityScope
     @Provides
     JsonPlaceholderApiView providesJsonPlaceholderApiView() {
         return jsonPlaceholderApiActivity;
     }
 
-    @JsonPlaceholderScope
+    @ActivityScope
     @Provides
     PostInteractor providePostInteractor() {
         return new PostInteractorImpl(providesJsonPlaceholderApiView());
     }
 
-    @JsonPlaceholderScope
+    @ActivityScope
     @Provides
     CommentInteractor provideCommentInteractor() {
         return new CommentInteractorImpl(providesJsonPlaceholderApiView());
     }
 
-    @JsonPlaceholderScope
+    @ActivityScope
     @Provides
     AlbumInteractor provideAlbumInteractor() {
         return new AlbumInteractorImpl(providesJsonPlaceholderApiView());
     }
 
-    @JsonPlaceholderScope
+    @ActivityScope
     @Provides
     PhotoInteractor providePhotoInteractor() {
         return new PhotoInteractorImpl(providesJsonPlaceholderApiView());
     }
 
-    @JsonPlaceholderScope
+    @ActivityScope
     @Provides
     TodoInteractor provideTodoInteractor() {
         return new TodoInteractorImpl(providesJsonPlaceholderApiView());
     }
 
-    @JsonPlaceholderScope
+    @ActivityScope
     @Provides
     UserInteractor provideUserInteractor() {
         return new UserInteractorImpl(providesJsonPlaceholderApiView());
     }
 
-    @JsonPlaceholderScope
+    @ActivityScope
+    @Provides
+    @Named("noParam")
+    UserInteractor provideUserInteractor2() {
+        return new UserInteractorImpl();
+    }
+
+    @ActivityScope
     @Provides
     JsonPlaceholderApiPresenter providesJsonPlaceholderApiPresenter() {
         return new JsonPlaceholderApiPresenterImpl(providesJsonPlaceholderApiView());

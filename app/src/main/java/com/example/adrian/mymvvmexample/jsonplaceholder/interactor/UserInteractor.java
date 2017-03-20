@@ -8,4 +8,5 @@ public interface UserInteractor {
 
     public void findAllUser();
 
+    public void test();
 }

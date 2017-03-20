@@ -21,6 +21,12 @@ public class JsonPlaceholderApiHandler {
 
     private static final String TAG = JsonPlaceholderApiHandler.class.getName();
 
+    public void onClickBtnJsonPlaceholderList(View view) {
+        Log.i(TAG, "OnClickBtnPost method");
+        Intent intent = new Intent(context, JsonPlaceholderApiListActivity.class);
+        context.startActivity(intent);
+    }
+
     public void onClickBtnPost(View view) {
         Log.i(TAG, "OnClickBtnPost method");
     }

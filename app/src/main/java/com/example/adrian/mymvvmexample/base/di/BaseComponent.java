@@ -9,7 +9,7 @@ import dagger.Component;
  * Created by Adrian_Czigany on 3/9/2017.
  */
 
-@BaseScope
+@ActivityScope
 @Component(dependencies = AppComponent.class, modules = {BaseModule.class})
 public interface BaseComponent {
 

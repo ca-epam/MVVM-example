@@ -1,5 +1,6 @@
 package com.example.adrian.mymvvmexample.omdb.di;
 
+import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.omdb.presenter.OmdbInteractor;
 import com.example.adrian.mymvvmexample.omdb.presenter.OmdbInteractorImpl;
 import com.example.adrian.mymvvmexample.omdb.presenter.OmdbPresenter;
@@ -34,26 +35,26 @@ public class OmdbModule {
     }
 
     @Provides
-    @OmdbScope
+    @ActivityScope
     public OmdbApiService provideOmdbService(@Named("omdbapi") Retrofit retrofit) {
         OmdbApiService omdbApiService = retrofit.create(OmdbApiService.class);
         return omdbApiService;
     }
 
     @Provides
-    @OmdbScope
+    @ActivityScope
     OmdbInteractor provideOmdbInteractor() {
         return new OmdbInteractorImpl(provideOmdApiView());
     }
 
     @Provides
-    @OmdbScope
+    @ActivityScope
     public OmdbPresenter provideOmdbPresenter() {
         return new OmdbPresenterImpl(provideOmdApiView(), provideOmdbInteractor());
     }
 
     @Provides
-    @OmdbScope
+    @ActivityScope
     OmdbApiView provideOmdApiView() {
         return omdbApiActivity;
     }
