@@ -24,7 +24,8 @@
         <activity android:name=".jsonplaceholder.view.JsonPlaceholderApiActivity" />
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".jsonplaceholder.view.JsonPlaceholderApiListActivity" />
-        <activity android:name=".jpuser.view.UsersActivity"></activity>
+        <activity android:name=".jpuser.view.UsersActivity" />
+        <activity android:name=".jppost.view.PostsActivity"></activity>
     </application>
 
 </manifest>

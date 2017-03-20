@@ -17,13 +17,13 @@ public class UsersModule {
         this.usersActivity = usersActivity;
     }
 
-//    @UserScope
+//    @ActivityScope
 //    @Provides
 //    UsersView providesUsersView() {
 //        return usersActivity;
 //    }
 //
-//    @UserScope
+//    @ActivityScope
 //    @Provides
 //    UserInteractor provideUserInteractor() {
 //        return new UserInteractorImpl();

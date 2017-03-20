@@ -1,8 +1,9 @@
 package com.example.adrian.mymvvmexample.jpuser.di;
 
+import com.example.adrian.mymvvmexample.app.di.AppComponent;
+import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
 import com.example.adrian.mymvvmexample.jpuser.viewmodel.UserViewModel;
-import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderApiComponent;
 
 import dagger.Component;
 
@@ -10,8 +11,8 @@ import dagger.Component;
  * Created by cadri on 2017. 03. 16..
  */
 
-@Component(dependencies = JsonPlaceholderApiComponent.class, modules = {UsersModule.class})
-@UserScope
+@Component(dependencies = AppComponent.class, modules = {UsersModule.class})
+@ActivityScope
 public interface UsersComponent {
 
     void inject(UserViewModel userViewModel);
@@ -24,7 +25,7 @@ public interface UsersComponent {
 
         public static UsersComponent buildComponent(UsersActivity activity) {
             return DaggerUsersComponent.builder()
-                    .jsonPlaceholderApiComponent(JsonPlaceholderApiComponent.Injector.getJsonPlaceholderApiComponent())
+                    .appComponent(AppComponent.Injector.getComponent())
                     .usersModule(new UsersModule(activity))
                     .build();
         }

@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.di.BaseComponent;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     private static final String TAG = BaseActivity.class.getSimpleName();
 
@@ -27,4 +27,5 @@ public class BaseActivity extends AppCompatActivity {
         BaseComponent.Injector.buildComponent(this).inject(this);
         injected = true;
     }
+
 }

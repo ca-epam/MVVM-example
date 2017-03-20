@@ -1,11 +1,15 @@
 package com.example.adrian.mymvvmexample.jsonplaceholder.presenter;
 
+import android.content.Intent;
+
+import com.example.adrian.mymvvmexample.jppost.view.PostsActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.AlbumInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.CommentInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.PhotoInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.PostInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.TodoInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.UserInteractor;
+import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
 
 /**
@@ -13,6 +17,8 @@ import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiV
  */
 
 public class JsonPlaceholderApiPresenterImpl implements JsonPlaceholderApiPresenter {
+
+    private static final String TAG = JsonPlaceholderApiPresenterImpl.class.getName();
 
     private JsonPlaceholderApiView jsonPlaceholderApiView;
 
@@ -43,11 +49,14 @@ public class JsonPlaceholderApiPresenterImpl implements JsonPlaceholderApiPresen
         this.photoInteractor = photoInteractor;
         this.todoInteractor = todoInteractor;
         this.userInteractor = userInteractor;
+
     }
 
     @Override
     public void onClickBtnFindAllPost() {
-        postInteractor.findAllPost();
+//        postInteractor.findAllPost();
+        Intent intent = new Intent((JsonPlaceholderApiActivity)jsonPlaceholderApiView, PostsActivity.class);
+        ((JsonPlaceholderApiActivity)jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
