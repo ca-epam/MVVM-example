@@ -2,15 +2,10 @@ package com.example.adrian.mymvvmexample.jsonplaceholder.interactor;
 
 import android.util.Log;
 
-import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderApiComponent;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Album;
 import com.example.adrian.mymvvmexample.jsonplaceholder.service.AlbumService;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,15 +19,10 @@ public class AlbumInteractorImpl implements AlbumInteractor {
 
     private static final String TAG = AlbumInteractorImpl.class.getName();
 
-    private JsonPlaceholderApiView jsonPlaceholderApiView;
+    private AlbumService albumService;
 
-    @Inject
-    AlbumService albumService;
-
-    public AlbumInteractorImpl(JsonPlaceholderApiView jsonPlaceholderApiView) {
-        this.jsonPlaceholderApiView = jsonPlaceholderApiView;
-
-        JsonPlaceholderApiComponent.Injector.buildComponent((JsonPlaceholderApiActivity) jsonPlaceholderApiView).inject(this);
+    public AlbumInteractorImpl(AlbumService albumService) {
+        this.albumService = albumService;
 
     }
 

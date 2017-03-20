@@ -2,23 +2,15 @@ package com.example.adrian.mymvvmexample.jpuser.view;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.example.adrian.mymvvmexample.R;
+import com.example.adrian.mymvvmexample.base.BaseActivity;
 import com.example.adrian.mymvvmexample.databinding.ActivityUsersBinding;
 import com.example.adrian.mymvvmexample.jpuser.di.UsersComponent;
 import com.example.adrian.mymvvmexample.jpuser.utils.UsersTestData;
-import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.UserInteractor;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
-public class UsersActivity extends AppCompatActivity implements UsersView {
-
-    @Inject
-    @Named("noParam")
-    UserInteractor userInteractorImpl;
+public class UsersActivity extends BaseActivity implements UsersView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +25,7 @@ public class UsersActivity extends AppCompatActivity implements UsersView {
         activityUsersBinding.rvUsers.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         activityUsersBinding.rvUsers.setAdapter(usersAdapter);
 
-        userInteractorImpl.toString();
+//        userInteractorImpl.toString();
 //        userInteractorImpl.test();
 
     }

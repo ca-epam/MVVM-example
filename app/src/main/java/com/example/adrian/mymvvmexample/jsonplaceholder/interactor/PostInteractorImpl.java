@@ -2,15 +2,10 @@ package com.example.adrian.mymvvmexample.jsonplaceholder.interactor;
 
 import android.util.Log;
 
-import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderApiComponent;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Post;
 import com.example.adrian.mymvvmexample.jsonplaceholder.service.PostService;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -24,18 +19,14 @@ public class PostInteractorImpl implements PostInteractor {
 
     private static final String TAG = PostInteractorImpl.class.getName();
 
-    private JsonPlaceholderApiView jsonPlaceholderApiView;
-
     private Observer<List<Post>> postListObserver;
     private Observer<Post> postObserver;
 
-    @Inject
-    PostService postService;
 
-    public PostInteractorImpl(JsonPlaceholderApiView jsonPlaceholderApiView) {
-        this.jsonPlaceholderApiView = jsonPlaceholderApiView;
+    private PostService postService;
 
-        JsonPlaceholderApiComponent.Injector.buildComponent((JsonPlaceholderApiActivity) jsonPlaceholderApiView).inject(this);
+    public PostInteractorImpl(PostService postService) {
+        this.postService = postService;
 
         createPostListObserver();
         createPostObserver();

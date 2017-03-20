@@ -24,8 +24,8 @@ public class MainModule {
 
     @Provides
     @ActivityScope
-    MainPresenter provideMainPresenter() {
-        return new MainPresenterImpl(provideMainView());
+    MainPresenter provideMainPresenter(MainView mainView) {
+        return new MainPresenterImpl(mainView);
     }
 
     @Provides

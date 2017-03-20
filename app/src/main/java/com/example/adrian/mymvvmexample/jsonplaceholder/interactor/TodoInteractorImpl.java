@@ -2,15 +2,10 @@ package com.example.adrian.mymvvmexample.jsonplaceholder.interactor;
 
 import android.util.Log;
 
-import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderApiComponent;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Todo;
 import com.example.adrian.mymvvmexample.jsonplaceholder.service.TodoService;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,15 +19,11 @@ public class TodoInteractorImpl implements TodoInteractor {
 
     private static final String TAG = TodoInteractorImpl.class.getName();
 
-    private JsonPlaceholderApiView jsonPlaceholderApiView;
 
-    @Inject
-    TodoService todoService;
+    private TodoService todoService;
 
-    public TodoInteractorImpl(JsonPlaceholderApiView jsonPlaceholderApiView) {
-        this.jsonPlaceholderApiView = jsonPlaceholderApiView;
-
-        JsonPlaceholderApiComponent.Injector.buildComponent((JsonPlaceholderApiActivity) jsonPlaceholderApiView).inject(this);
+    public TodoInteractorImpl(TodoService todoService) {
+        this.todoService = todoService;
 
     }
 

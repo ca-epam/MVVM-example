@@ -2,15 +2,10 @@ package com.example.adrian.mymvvmexample.jsonplaceholder.interactor;
 
 import android.util.Log;
 
-import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderApiComponent;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Comment;
 import com.example.adrian.mymvvmexample.jsonplaceholder.service.CommentService;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,15 +19,10 @@ public class CommentInteractorImpl implements CommentInteractor {
 
     private static final String TAG = CommentInteractorImpl.class.getName();
 
-    private JsonPlaceholderApiView jsonPlaceholderApiView;
+    private CommentService commentService;
 
-    @Inject
-    CommentService commentService;
-
-    public CommentInteractorImpl(JsonPlaceholderApiView jsonPlaceholderApiView) {
-        this.jsonPlaceholderApiView = jsonPlaceholderApiView;
-
-        JsonPlaceholderApiComponent.Injector.buildComponent((JsonPlaceholderApiActivity) jsonPlaceholderApiView).inject(this);
+    public CommentInteractorImpl(CommentService commentService) {
+        this.commentService = commentService;
 
     }
 

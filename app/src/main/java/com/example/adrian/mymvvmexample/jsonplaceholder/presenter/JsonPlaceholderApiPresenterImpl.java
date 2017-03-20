@@ -1,16 +1,12 @@
 package com.example.adrian.mymvvmexample.jsonplaceholder.presenter;
 
-import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderApiComponent;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.AlbumInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.CommentInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.PhotoInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.PostInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.TodoInteractor;
 import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.UserInteractor;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
-
-import javax.inject.Inject;
 
 /**
  * Created by Adrian_Czigany on 3/8/2017.
@@ -20,29 +16,33 @@ public class JsonPlaceholderApiPresenterImpl implements JsonPlaceholderApiPresen
 
     private JsonPlaceholderApiView jsonPlaceholderApiView;
 
-    @Inject
-    PostInteractor postInteractor;
+    private PostInteractor postInteractor;
 
-    @Inject
-    CommentInteractor commentInteractor;
+    private CommentInteractor commentInteractor;
 
-    @Inject
-    AlbumInteractor albumInteractor;
+    private AlbumInteractor albumInteractor;
 
-    @Inject
-    PhotoInteractor photoInteractor;
+    private PhotoInteractor photoInteractor;
 
-    @Inject
-    TodoInteractor todoInteractor;
+    private TodoInteractor todoInteractor;
 
-    @Inject
-    UserInteractor userInteractor;
+    private UserInteractor userInteractor;
 
-    public JsonPlaceholderApiPresenterImpl(JsonPlaceholderApiView jsonPlaceholderApiView) {
+    public JsonPlaceholderApiPresenterImpl(
+            JsonPlaceholderApiView jsonPlaceholderApiView,
+            PostInteractor postInteractor,
+            CommentInteractor commentInteractor,
+            AlbumInteractor albumInteractor,
+            PhotoInteractor photoInteractor,
+            TodoInteractor todoInteractor,
+            UserInteractor userInteractor) {
         this.jsonPlaceholderApiView = jsonPlaceholderApiView;
-
-        JsonPlaceholderApiComponent.Injector.buildComponent((JsonPlaceholderApiActivity) jsonPlaceholderApiView).inject(this);
-
+        this.postInteractor = postInteractor;
+        this.commentInteractor = commentInteractor;
+        this.albumInteractor = albumInteractor;
+        this.photoInteractor = photoInteractor;
+        this.todoInteractor = todoInteractor;
+        this.userInteractor = userInteractor;
     }
 
     @Override
