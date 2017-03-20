@@ -17,15 +17,10 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
-        if(!injected) {
+        if (!injected) {
             inject();
         }
 
-//        BaseComponent baseComponent = DaggerBaseComponent.builder()
-//                .baseModule(new BaseModule(this))
-//                .appComponent(MyApp.get(this).getAppComponent())
-//                .build();
-//        baseComponent.inject(this);
     }
 
     protected void inject() {
