@@ -4,125 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.adrian.mymvvmexample.jppost.view.PostsActivity">
 
-    <data>
-
-        <variable
-            name="postViewModel"
-            type="com.example.adrian.mymvvmexample.jppost.viewmodel.PostsViewModel" />
-
-        <variable
-            name="handler"
-            type="com.example.adrian.mymvvmexample.jppost.viewmodel.PostsViewModel" />
-    </data>
+    <data/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPosts"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="user id: " />
-
-
-            <TextView
-                android:id="@+id/tvUserId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.valueOf(postViewModel.userId)}" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="id: " />
-
-            <TextView
-                android:id="@+id/tvId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.valueOf(postViewModel.id)}" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="title: " />
-
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{postViewModel.title}" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="body: " />
-
-            <TextView
-                android:id="@+id/tvBody"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{postViewModel.body}" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="body: " />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={postViewModel.body}" />
-
-        </LinearLayout>
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{handler::onClickModifyPostByObject}"
-            android:text="set post by object" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{handler::onClickModifyPostByFields}"
-            android:text="set post by field" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
+
 
 </layout>

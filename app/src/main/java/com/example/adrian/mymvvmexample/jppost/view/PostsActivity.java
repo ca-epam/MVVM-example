@@ -1,6 +1,5 @@
 package com.example.adrian.mymvvmexample.jppost.view;
 
-import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BindingActivity;
 import com.example.adrian.mymvvmexample.databinding.ActivityPostsBinding;
@@ -14,24 +13,22 @@ public class PostsActivity extends BindingActivity<ActivityPostsBinding, PostsVi
     @Inject
     PostsViewModel postsViewModel;
 
+    private PostItemAdapter postItemAdapter;
+
     @Override
     public PostsViewModel onCreate() {
         PostsComponent.Injector.buildComponent(this).inject(this);
-
         return postsViewModel;
     }
 
     @Override
     public int getVariable() {
-        getBinding().setHandler(getViewModel());
-        return BR.postViewModel;
-
-//        return View.generateViewId();
-//        return 0;
+        return 0;
     }
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_posts;
     }
+
 }
