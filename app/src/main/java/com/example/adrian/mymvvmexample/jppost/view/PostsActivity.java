@@ -13,8 +13,6 @@ public class PostsActivity extends BindingActivity<ActivityPostsBinding, PostsVi
     @Inject
     PostsViewModel postsViewModel;
 
-    private PostItemAdapter postItemAdapter;
-
     @Override
     public PostsViewModel onCreate() {
         PostsComponent.Injector.buildComponent(this).inject(this);

@@ -1,4 +1,4 @@
-package com.example.adrian.mymvvmexample.jppost.model;
+package com.example.adrian.mymvvmexample.jppost.domain;
 
 /**
  * Created by Adrian_Czigany on 3/9/2017.

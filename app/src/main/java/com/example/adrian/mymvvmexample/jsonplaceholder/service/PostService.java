@@ -1,7 +1,7 @@
 package com.example.adrian.mymvvmexample.jsonplaceholder.service;
 
 
-import com.example.adrian.mymvvmexample.jppost.model.Post;
+import com.example.adrian.mymvvmexample.jppost.domain.Post;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.adrian.mymvvmexample.jsonplaceholder.interactor;
+package com.example.adrian.mymvvmexample.jppost.model;
 
 import android.util.Log;
 
@@ -12,20 +12,22 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Adrian_Czigany on 3/8/2017.
+ * Created by Adrian_Czigany on 3/21/2017.
  */
 
-public class PostInteractorImpl implements PostInteractor {
+public class PostsModel {
 
-    private static final String TAG = PostInteractorImpl.class.getName();
+    private static final String TAG = PostsModel.class.getName();
+
+    private final PostService postService;
 
     private Observer<List<Post>> postListObserver;
+
     private Observer<Post> postObserver;
 
+    private OnPostsCallback callback;
 
-    private PostService postService;
-
-    public PostInteractorImpl(PostService postService) {
+    public PostsModel(PostService postService) {
         this.postService = postService;
 
         createPostListObserver();
@@ -34,8 +36,6 @@ public class PostInteractorImpl implements PostInteractor {
     }
 
     private void createPostListObserver() {
-        Log.i(TAG, "createPostListObserver ...");
-
         postListObserver = new Observer<List<Post>>() {
             @Override
             public void onCompleted() {
@@ -46,19 +46,19 @@ public class PostInteractorImpl implements PostInteractor {
             public void onError(Throwable e) {
                 Log.i(TAG, "onError");
                 e.printStackTrace();
+                callback.onFindAllPostError(e);
             }
 
             @Override
             public void onNext(List<Post> posts) {
                 Log.i(TAG, "onNext");
                 Log.i(TAG, posts.toString());
+                callback.onFindAllPostSuccess(posts);
             }
         };
     }
 
     private void createPostObserver() {
-        Log.i(TAG, "createPostObserver ...");
-
         postObserver = new Observer<Post>() {
             @Override
             public void onCompleted() {
@@ -79,7 +79,6 @@ public class PostInteractorImpl implements PostInteractor {
         };
     }
 
-    @Override
     public void findAllPost() {
         postService.findAllPost()
                 .subscribeOn(Schedulers.io())
@@ -87,12 +86,19 @@ public class PostInteractorImpl implements PostInteractor {
                 .subscribe(postListObserver);
     }
 
-    @Override
-    public void findPostById(final int id) {
-        postService.findPostById(id)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(postObserver);
+    public void registerCallback(OnPostsCallback callback) {
+        this.callback = callback;
     }
 
+    public void unRegisterCallback() {
+        this.callback = null;
+    }
+
+    public interface OnPostsCallback {
+
+        void onFindAllPostSuccess(List<Post> posts);
+
+        void onFindAllPostError(Throwable t);
+
+    }
 }

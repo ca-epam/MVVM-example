@@ -4,7 +4,7 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.example.adrian.mymvvmexample.BR;
-import com.example.adrian.mymvvmexample.jppost.model.Post;
+import com.example.adrian.mymvvmexample.jppost.domain.Post;
 
 /**
  * Created by Adrian_Czigany on 3/21/2017.
