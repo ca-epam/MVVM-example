@@ -3,10 +3,10 @@ package com.example.adrian.mymvvmexample.jppost.viewmodel;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.example.adrian.mymvvmexample.base.BaseViewModel;
-import com.example.adrian.mymvvmexample.jppost.domain.Post;
 import com.example.adrian.mymvvmexample.jppost.model.PostsModel;
 import com.example.adrian.mymvvmexample.jppost.view.PostItemAdapter;
 import com.example.adrian.mymvvmexample.jppost.view.PostsActivity;
+import com.example.adrian.mymvvmexample.jsonplaceholder.model.Post;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MyMVPExample.iml" filepath="$PROJECT_DIR$/MyMVPExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyMVVMExample.iml" filepath="$PROJECT_DIR$/MyMVVMExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-logic-library/app-logic-library.iml" filepath="$PROJECT_DIR$/app-logic-library/app-logic-library.iml" />
     </modules>
   </component>
 </project>

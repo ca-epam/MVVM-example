@@ -2,7 +2,7 @@ package com.example.adrian.mymvvmexample.jppost.model;
 
 import android.util.Log;
 
-import com.example.adrian.mymvvmexample.jppost.domain.Post;
+import com.example.adrian.mymvvmexample.jsonplaceholder.model.Post;
 import com.example.adrian.mymvvmexample.jsonplaceholder.service.PostService;
 
 import java.util.List;
