@@ -1,15 +1,32 @@
 package com.example.adrian.mymvvmexample.jpalbum.view;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import com.example.adrian.mymvvmexample.R;
+import com.example.adrian.mymvvmexample.base.BindingActivity;
+import com.example.adrian.mymvvmexample.databinding.ActivityAlbumsBinding;
+import com.example.adrian.mymvvmexample.jpalbum.di.AlbumsComponent;
+import com.example.adrian.mymvvmexample.jpalbum.viewmodel.AlbumsViewModel;
 
-public class AlbumsActivity extends AppCompatActivity {
+import javax.inject.Inject;
+
+public class AlbumsActivity extends BindingActivity<ActivityAlbumsBinding, AlbumsViewModel> {
+
+    @Inject
+    AlbumsViewModel albumsViewModel;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_albums);
+    public AlbumsViewModel onCreate() {
+        AlbumsComponent.Injector.buildComponent(this).inject(this);
+        return albumsViewModel;
     }
+
+    @Override
+    public int getVariable() {
+        return 0;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_albums;
+    }
+
 }

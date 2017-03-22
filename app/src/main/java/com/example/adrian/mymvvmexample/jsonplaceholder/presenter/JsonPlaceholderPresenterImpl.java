@@ -32,11 +32,6 @@ public class JsonPlaceholderPresenterImpl implements JsonPlaceholderPresenter {
     }
 
     @Override
-    public void onClickBtnPostById(final int id) {
-//        postInteractor.findPostById(id);
-    }
-
-    @Override
     public void onClickBtnFindAllComment() {
         Intent intent = new Intent((JsonPlaceholderActivity) jsonPlaceholderApiView, CommentsActivity.class);
         ((JsonPlaceholderActivity) jsonPlaceholderApiView).startActivity(intent);

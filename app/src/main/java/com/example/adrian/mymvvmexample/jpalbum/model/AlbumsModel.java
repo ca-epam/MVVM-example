@@ -1,4 +1,4 @@
-package com.example.adrian.mymvvmexample.jsonplaceholder.interactor;
+package com.example.adrian.mymvvmexample.jpalbum.model;
 
 import android.util.Log;
 
@@ -12,27 +12,30 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Adrian_Czigany on 3/8/2017.
+ * Created by Adrian_Czigany on 3/22/2017.
  */
 
-public class AlbumInteractorImpl implements AlbumInteractor {
+public class AlbumsModel  {
 
-    private static final String TAG = AlbumInteractorImpl.class.getName();
+    private static final String TAG = AlbumsModel.class.getName();
+
+    private final AlbumService albumService;
 
     private Observer<List<Album>> albumListObserver;
+
     private Observer<Album> albumObserver;
 
-    private AlbumService albumService;
+    private OnAlbumCallback callback;
 
-    public AlbumInteractorImpl(AlbumService albumService) {
+    public AlbumsModel(AlbumService albumService) {
         this.albumService = albumService;
 
         createAlbumListObserver();
         createAlbumObserver();
-    }
-    private void createAlbumListObserver() {
-        Log.i(TAG, "createAlbumListObserver ...");
 
+    }
+
+    private void createAlbumListObserver() {
         albumListObserver = new Observer<List<Album>>() {
             @Override
             public void onCompleted() {
@@ -43,19 +46,19 @@ public class AlbumInteractorImpl implements AlbumInteractor {
             public void onError(Throwable e) {
                 Log.i(TAG, "onError");
                 e.printStackTrace();
+                callback.onFindAllAlbumError(e);
             }
 
             @Override
             public void onNext(List<Album> albums) {
                 Log.i(TAG, "onNext");
                 Log.i(TAG, albums.toString());
+                callback.onFindAllAlbumSuccess(albums);
             }
         };
     }
 
     private void createAlbumObserver() {
-        Log.i(TAG, "createAlbumObserver ...");
-
         albumObserver = new Observer<Album>() {
             @Override
             public void onCompleted() {
@@ -76,7 +79,6 @@ public class AlbumInteractorImpl implements AlbumInteractor {
         };
     }
 
-    @Override
     public void findAllAlbum() {
         albumService.findAllAlbum()
                 .subscribeOn(Schedulers.io())
@@ -84,5 +86,20 @@ public class AlbumInteractorImpl implements AlbumInteractor {
                 .subscribe(albumListObserver);
     }
 
+    public void registerCallback(OnAlbumCallback callback) {
+        this.callback = callback;
+    }
+
+    public void unRegisterCallback() {
+        this.callback = null;
+    }
+
+    public interface OnAlbumCallback {
+
+        void onFindAllAlbumSuccess(List<Album> albums);
+
+        void onFindAllAlbumError(Throwable t);
+
+    }
 
 }

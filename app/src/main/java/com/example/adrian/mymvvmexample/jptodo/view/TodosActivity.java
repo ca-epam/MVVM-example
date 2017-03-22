@@ -1,15 +1,32 @@
 package com.example.adrian.mymvvmexample.jptodo.view;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import com.example.adrian.mymvvmexample.R;
+import com.example.adrian.mymvvmexample.base.BindingActivity;
+import com.example.adrian.mymvvmexample.databinding.ActivityTodosBinding;
+import com.example.adrian.mymvvmexample.jptodo.di.TodosComponent;
+import com.example.adrian.mymvvmexample.jptodo.viewmodel.TodosViewModel;
 
-public class TodosActivity extends AppCompatActivity {
+import javax.inject.Inject;
+
+public class TodosActivity extends BindingActivity<ActivityTodosBinding, TodosViewModel> {
+
+    @Inject
+    TodosViewModel todosViewModel;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_todos);
+    public TodosViewModel onCreate() {
+        TodosComponent.Injector.buildComponent(this).inject(this);
+        return todosViewModel;
+    }
+
+    @Override
+    public int getVariable() {
+        return 0;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_todos;
     }
 }

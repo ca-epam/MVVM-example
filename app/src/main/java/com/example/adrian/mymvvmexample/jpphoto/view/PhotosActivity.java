@@ -1,15 +1,31 @@
 package com.example.adrian.mymvvmexample.jpphoto.view;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import com.example.adrian.mymvvmexample.R;
+import com.example.adrian.mymvvmexample.base.BindingActivity;
+import com.example.adrian.mymvvmexample.databinding.ActivityPhotosBinding;
+import com.example.adrian.mymvvmexample.jpphoto.di.PhotosComponent;
+import com.example.adrian.mymvvmexample.jpphoto.viewmodel.PhotosViewModel;
 
-public class PhotosActivity extends AppCompatActivity {
+import javax.inject.Inject;
+
+public class PhotosActivity extends BindingActivity<ActivityPhotosBinding, PhotosViewModel> {
+
+    @Inject
+    PhotosViewModel photosViewModel;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photos);
+    public PhotosViewModel onCreate() {
+        PhotosComponent.Injector.buildComponent(this).inject(this);
+        return photosViewModel;
+    }
+
+    @Override
+    public int getVariable() {
+        return 0;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_photos;
     }
 }

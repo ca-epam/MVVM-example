@@ -8,8 +8,6 @@ public interface JsonPlaceholderPresenter {
 
     public void onClickBtnFindAllPost();
 
-    public void onClickBtnPostById(final int id);
-
     public void onClickBtnFindAllComment();
 
     public void onClickBtnFindAllAlbum();
