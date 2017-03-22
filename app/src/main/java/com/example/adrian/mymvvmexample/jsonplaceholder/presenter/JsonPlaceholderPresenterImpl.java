@@ -8,7 +8,7 @@ import com.example.adrian.mymvvmexample.jpphoto.view.PhotosActivity;
 import com.example.adrian.mymvvmexample.jppost.view.PostsActivity;
 import com.example.adrian.mymvvmexample.jptodo.view.TodosActivity;
 import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
+import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderView;
 
 /**
@@ -27,8 +27,8 @@ public class JsonPlaceholderPresenterImpl implements JsonPlaceholderPresenter {
 
     @Override
     public void onClickBtnFindAllPost() {
-        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, PostsActivity.class);
-        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
+        Intent intent = new Intent((JsonPlaceholderActivity) jsonPlaceholderApiView, PostsActivity.class);
+        ((JsonPlaceholderActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
@@ -38,31 +38,31 @@ public class JsonPlaceholderPresenterImpl implements JsonPlaceholderPresenter {
 
     @Override
     public void onClickBtnFindAllComment() {
-        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, CommentsActivity.class);
-        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
+        Intent intent = new Intent((JsonPlaceholderActivity) jsonPlaceholderApiView, CommentsActivity.class);
+        ((JsonPlaceholderActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnFindAllAlbum() {
-        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, AlbumsActivity.class);
-        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
+        Intent intent = new Intent((JsonPlaceholderActivity) jsonPlaceholderApiView, AlbumsActivity.class);
+        ((JsonPlaceholderActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnFindAllPhoto() {
-        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, PhotosActivity.class);
-        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
+        Intent intent = new Intent((JsonPlaceholderActivity) jsonPlaceholderApiView, PhotosActivity.class);
+        ((JsonPlaceholderActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnFindAllTodo() {
-        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, TodosActivity.class);
-        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
+        Intent intent = new Intent((JsonPlaceholderActivity) jsonPlaceholderApiView, TodosActivity.class);
+        ((JsonPlaceholderActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnFindAllUser() {
-        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, UsersActivity.class);
-        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
+        Intent intent = new Intent((JsonPlaceholderActivity) jsonPlaceholderApiView, UsersActivity.class);
+        ((JsonPlaceholderActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 }

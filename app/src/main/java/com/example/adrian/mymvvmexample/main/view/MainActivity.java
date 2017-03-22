@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.apteligent.view.ApteligentActivity;
 import com.example.adrian.mymvvmexample.base.BaseActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
+import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderActivity;
 import com.example.adrian.mymvvmexample.main.di.MainComponent;
 import com.example.adrian.mymvvmexample.main.presenter.MainPresenter;
 import com.example.adrian.mymvvmexample.omdb.view.OmdbApiActivity;
@@ -78,7 +78,7 @@ public class MainActivity extends BaseActivity implements MainView {
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.nav_jsonplaceholder:
-                        startActivity(new Intent(MainActivity.this, JsonPlaceholderApiActivity.class));
+                        startActivity(new Intent(MainActivity.this, JsonPlaceholderActivity.class));
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.nav_jsonplaceholder_mvvm:

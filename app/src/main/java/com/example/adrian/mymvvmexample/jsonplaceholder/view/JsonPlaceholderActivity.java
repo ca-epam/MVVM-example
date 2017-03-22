@@ -14,7 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlaceholderView {
+public class JsonPlaceholderActivity extends BaseActivity implements JsonPlaceholderView {
 
     @BindView(R.id.btnFindAllPost)
     Button btnFindAllPost;
@@ -25,7 +25,7 @@ public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_json_placeholder_api);
+        setContentView(R.layout.activity_json_placeholder);
 
         ButterKnife.bind(this);
 

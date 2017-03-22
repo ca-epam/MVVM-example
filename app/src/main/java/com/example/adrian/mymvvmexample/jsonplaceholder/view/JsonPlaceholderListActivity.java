@@ -11,9 +11,9 @@ import com.example.adrian.mymvvmexample.utils.JsonPlaceholderTestData;
 
 import java.util.List;
 
-public class JsonPlaceholderApiListActivity extends BaseActivity {
+public class JsonPlaceholderListActivity extends BaseActivity {
 
-    private static final String TAG = JsonPlaceholderApiListActivity.class.getName();
+    private static final String TAG = JsonPlaceholderListActivity.class.getName();
 
     private RecyclerView rvJsonPlaceHolder;
 
@@ -22,7 +22,7 @@ public class JsonPlaceholderApiListActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_json_placeholder_api_list);
+        setContentView(R.layout.activity_json_placeholder_list);
 
         rvJsonPlaceHolder = (RecyclerView) findViewById(R.id.rvJsonPlaceHolder);
         rvJsonPlaceHolder.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));

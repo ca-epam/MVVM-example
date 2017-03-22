@@ -2,7 +2,7 @@ package com.example.adrian.mymvvmexample.jsonplaceholder.di;
 
 import com.example.adrian.mymvvmexample.app.di.AppComponent;
 import com.example.adrian.mymvvmexample.base.di.ActivityScope;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
+import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderActivity;
 
 import dagger.Component;
 
@@ -14,7 +14,7 @@ import dagger.Component;
 @Component(dependencies = AppComponent.class, modules = {JsonPlaceholderBaseModule.class, JsonPlaceholderServiceModule.class})
 public interface JsonPlaceholderComponent {
 
-    void inject(JsonPlaceholderApiActivity jsonPlaceholderApiActivity);
+    void inject(JsonPlaceholderActivity jsonPlaceholderActivity);
 
     final class Injector {
         private static JsonPlaceholderComponent jsonPlaceholderComponent;
@@ -22,7 +22,7 @@ public interface JsonPlaceholderComponent {
         private Injector() {
         }
 
-        public static JsonPlaceholderComponent buildComponent(JsonPlaceholderApiActivity activity) {
+        public static JsonPlaceholderComponent buildComponent(JsonPlaceholderActivity activity) {
             jsonPlaceholderComponent = DaggerJsonPlaceholderComponent.builder()
                     .appComponent(AppComponent.Injector.getComponent())
                     .jsonPlaceholderBaseModule(new JsonPlaceholderBaseModule(activity))

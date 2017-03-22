@@ -21,9 +21,9 @@
         <activity android:name=".main.view.MainActivity" />
         <activity android:name=".apteligent.view.ApteligentActivity" />
         <activity android:name=".omdb.view.OmdbApiActivity" />
-        <activity android:name=".jsonplaceholder.view.JsonPlaceholderApiActivity" />
+        <activity android:name=".jsonplaceholder.view.JsonPlaceholderActivity" />
         <activity android:name=".base.BaseActivity" />
-        <activity android:name=".jsonplaceholder.view.JsonPlaceholderApiListActivity" />
+        <activity android:name=".jsonplaceholder.view.JsonPlaceholderListActivity" />
         <activity android:name=".jpuser.view.UsersActivity" />
         <activity android:name=".jppost.view.PostsActivity" />
         <activity android:name=".jpalbum.view.AlbumsActivity" />
