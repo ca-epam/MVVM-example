@@ -25,7 +25,11 @@
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".jsonplaceholder.view.JsonPlaceholderApiListActivity" />
         <activity android:name=".jpuser.view.UsersActivity" />
-        <activity android:name=".jppost.view.PostsActivity"></activity>
+        <activity android:name=".jppost.view.PostsActivity" />
+        <activity android:name=".jpalbum.view.AlbumsActivity" />
+        <activity android:name=".jpcomment.view.CommentsActivity" />
+        <activity android:name=".jpphoto.view.PhotosActivity" />
+        <activity android:name=".jptodo.view.TodosActivity"></activity>
     </application>
 
 </manifest>

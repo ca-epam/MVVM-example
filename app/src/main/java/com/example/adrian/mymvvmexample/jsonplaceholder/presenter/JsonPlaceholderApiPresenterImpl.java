@@ -2,13 +2,12 @@ package com.example.adrian.mymvvmexample.jsonplaceholder.presenter;
 
 import android.content.Intent;
 
+import com.example.adrian.mymvvmexample.jpalbum.view.AlbumsActivity;
+import com.example.adrian.mymvvmexample.jpcomment.view.CommentsActivity;
+import com.example.adrian.mymvvmexample.jpphoto.view.PhotosActivity;
 import com.example.adrian.mymvvmexample.jppost.view.PostsActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.AlbumInteractor;
-import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.CommentInteractor;
-import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.PhotoInteractor;
-import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.PostInteractor;
-import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.TodoInteractor;
-import com.example.adrian.mymvvmexample.jsonplaceholder.interactor.UserInteractor;
+import com.example.adrian.mymvvmexample.jptodo.view.TodosActivity;
+import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
 
@@ -22,70 +21,48 @@ public class JsonPlaceholderApiPresenterImpl implements JsonPlaceholderApiPresen
 
     private JsonPlaceholderApiView jsonPlaceholderApiView;
 
-    private PostInteractor postInteractor;
-
-    private CommentInteractor commentInteractor;
-
-    private AlbumInteractor albumInteractor;
-
-    private PhotoInteractor photoInteractor;
-
-    private TodoInteractor todoInteractor;
-
-    private UserInteractor userInteractor;
-
-    public JsonPlaceholderApiPresenterImpl(
-            JsonPlaceholderApiView jsonPlaceholderApiView,
-            PostInteractor postInteractor,
-            CommentInteractor commentInteractor,
-            AlbumInteractor albumInteractor,
-            PhotoInteractor photoInteractor,
-            TodoInteractor todoInteractor,
-            UserInteractor userInteractor) {
+    public JsonPlaceholderApiPresenterImpl(JsonPlaceholderApiView jsonPlaceholderApiView) {
         this.jsonPlaceholderApiView = jsonPlaceholderApiView;
-        this.postInteractor = postInteractor;
-        this.commentInteractor = commentInteractor;
-        this.albumInteractor = albumInteractor;
-        this.photoInteractor = photoInteractor;
-        this.todoInteractor = todoInteractor;
-        this.userInteractor = userInteractor;
-
     }
 
     @Override
     public void onClickBtnFindAllPost() {
-//        postInteractor.findAllPost();
-        Intent intent = new Intent((JsonPlaceholderApiActivity)jsonPlaceholderApiView, PostsActivity.class);
-        ((JsonPlaceholderApiActivity)jsonPlaceholderApiView).startActivity(intent);
+        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, PostsActivity.class);
+        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnPostById(final int id) {
-        postInteractor.findPostById(id);
+//        postInteractor.findPostById(id);
     }
 
     @Override
     public void onClickBtnFindAllComment() {
-        commentInteractor.findAllComment();
+        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, CommentsActivity.class);
+        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnFindAllAlbum() {
-        albumInteractor.findAllAlbum();
+        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, AlbumsActivity.class);
+        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnFindAllPhoto() {
-        photoInteractor.findAllPhoto();
+        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, PhotosActivity.class);
+        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnFindAllTodo() {
-        todoInteractor.findAllTodo();
+        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, TodosActivity.class);
+        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
     public void onClickBtnFindAllUser() {
-        userInteractor.findAllUser();
+        Intent intent = new Intent((JsonPlaceholderApiActivity) jsonPlaceholderApiView, UsersActivity.class);
+        ((JsonPlaceholderApiActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 }

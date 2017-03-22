@@ -29,21 +29,37 @@ public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlac
 
         ButterKnife.bind(this);
 
-
         JsonPlaceholderApiComponent.Injector.buildComponent(this).inject(this);
-
-//        ActivityJsonPlaceholderApiBinding activityJsonPlaceholderApiBinding = DataBindingUtil.setContentView(this, R.layout.activity_json_placeholder_api);
-
-
-
-//        JsonPlaceholderApiHandler jsonPlaceholderApiHandler = new JsonPlaceholderApiHandler(this);
-//        activityJsonPlaceholderApiBinding.setHandler(jsonPlaceholderApiHandler);
-
     }
 
     @OnClick(R.id.btnFindAllPost)
     public void onClickBtnFindAllPost() {
         jsonPlaceholderApiPresenter.onClickBtnFindAllPost();
+    }
+
+    @OnClick(R.id.btnFindAllComment)
+    public void onClickBtnFindAllComment() {
+        jsonPlaceholderApiPresenter.onClickBtnFindAllComment();
+    }
+
+    @OnClick(R.id.btnFindAllAlbum)
+    public void onClickBtnFindAllAlbum() {
+        jsonPlaceholderApiPresenter.onClickBtnFindAllAlbum();
+    }
+
+    @OnClick(R.id.btnFindAllPhoto)
+    public void onClickBtnFindAllPhoto() {
+        jsonPlaceholderApiPresenter.onClickBtnFindAllPhoto();
+    }
+
+    @OnClick(R.id.btnFindAllTodo)
+    public void onClickBtnFindAllTodo() {
+        jsonPlaceholderApiPresenter.onClickBtnFindAllTodo();
+    }
+
+    @OnClick(R.id.btnFindAllUser)
+    public void onClickBtnFindAllUser() {
+        jsonPlaceholderApiPresenter.onClickBtnFindAllUser();
     }
 
 }
