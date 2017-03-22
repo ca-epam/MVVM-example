@@ -23,6 +23,8 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
 
     private PostItemAdapter postItemAdapter;
 
+    private List<PostItemViewModel> postItemViewModels;
+
     public PostsViewModel(PostsActivity activity, PostsModel postsModel) {
         super(activity);
         this.postsModel = postsModel;

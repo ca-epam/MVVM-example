@@ -64,4 +64,5 @@ public class PostItemViewModel extends BaseObservable {
                 "post=" + post +
                 '}';
     }
+
 }
