@@ -28,7 +28,6 @@ public class JsonPlaceholderListActivity extends BaseActivity {
         rvJsonPlaceHolder.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         updateUI();
-
     }
 
     private void updateUI() {

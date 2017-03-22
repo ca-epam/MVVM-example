@@ -16,6 +16,8 @@ import butterknife.OnClick;
 
 public class JsonPlaceholderActivity extends BaseActivity implements JsonPlaceholderView {
 
+    private static final String TAG = JsonPlaceholderActivity.class.getName();
+
     @BindView(R.id.btnFindAllPost)
     Button btnFindAllPost;
 
