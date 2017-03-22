@@ -15,27 +15,27 @@ import java.util.List;
  * Created by Adrian_Czigany on 3/14/2017.
  */
 
-public class JsonPlaceholderApiAdapter extends RecyclerView.Adapter<JsonPlaceholderApiAdapter.JsonPlaceholderApiHolder> {
+public class JsonPlaceholderAdapter extends RecyclerView.Adapter<JsonPlaceholderAdapter.JsonPlaceholderHolder> {
 
-    private static final String TAG = JsonPlaceholderApiAdapter.class.getName();
+    private static final String TAG = JsonPlaceholderAdapter.class.getName();
 
     List<JsonPlaceholder> list;
 
-    public JsonPlaceholderApiAdapter(List<JsonPlaceholder> list) {
+    public JsonPlaceholderAdapter(List<JsonPlaceholder> list) {
         this.list = list;
     }
 
     @Override
-    public JsonPlaceholderApiHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public JsonPlaceholderHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
 
         ListItemJsonplaceholderBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.list_item_jsonplaceholder, parent, false);
 
-        return new JsonPlaceholderApiHolder(binding);
+        return new JsonPlaceholderHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(JsonPlaceholderApiHolder holder, int position) {
+    public void onBindViewHolder(JsonPlaceholderHolder holder, int position) {
         JsonPlaceholder jsonPlaceholder = list.get(position);
         holder.bind(jsonPlaceholder);
     }
@@ -45,11 +45,11 @@ public class JsonPlaceholderApiAdapter extends RecyclerView.Adapter<JsonPlacehol
         return list.size();
     }
 
-    static class JsonPlaceholderApiHolder extends RecyclerView.ViewHolder {
+    static class JsonPlaceholderHolder extends RecyclerView.ViewHolder {
 
         private final ListItemJsonplaceholderBinding binding;
 
-        public JsonPlaceholderApiHolder(ListItemJsonplaceholderBinding binding) {
+        public JsonPlaceholderHolder(ListItemJsonplaceholderBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

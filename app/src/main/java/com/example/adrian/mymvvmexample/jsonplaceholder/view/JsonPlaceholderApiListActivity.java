@@ -17,7 +17,7 @@ public class JsonPlaceholderApiListActivity extends BaseActivity {
 
     private RecyclerView rvJsonPlaceHolder;
 
-    private JsonPlaceholderApiAdapter jsonPlaceholderApiAdapter;
+    private JsonPlaceholderAdapter jsonPlaceholderAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +33,10 @@ public class JsonPlaceholderApiListActivity extends BaseActivity {
 
     private void updateUI() {
         List<JsonPlaceholder> list = JsonPlaceholderTestData.get();
-        if(jsonPlaceholderApiAdapter == null) {
-            jsonPlaceholderApiAdapter = new JsonPlaceholderApiAdapter(list);
+        if(jsonPlaceholderAdapter == null) {
+            jsonPlaceholderAdapter = new JsonPlaceholderAdapter(list);
         }
-        rvJsonPlaceHolder.setAdapter(jsonPlaceholderApiAdapter);
+        rvJsonPlaceHolder.setAdapter(jsonPlaceholderAdapter);
     }
 
 }

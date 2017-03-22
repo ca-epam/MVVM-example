@@ -5,8 +5,8 @@ import android.widget.Button;
 
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BaseActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderApiComponent;
-import com.example.adrian.mymvvmexample.jsonplaceholder.presenter.JsonPlaceholderApiPresenter;
+import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderComponent;
+import com.example.adrian.mymvvmexample.jsonplaceholder.presenter.JsonPlaceholderPresenter;
 
 import javax.inject.Inject;
 
@@ -14,13 +14,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlaceholderApiView {
+public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlaceholderView {
 
     @BindView(R.id.btnFindAllPost)
     Button btnFindAllPost;
 
     @Inject
-    JsonPlaceholderApiPresenter jsonPlaceholderApiPresenter;
+    JsonPlaceholderPresenter jsonPlaceholderPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,37 +29,37 @@ public class JsonPlaceholderApiActivity extends BaseActivity implements JsonPlac
 
         ButterKnife.bind(this);
 
-        JsonPlaceholderApiComponent.Injector.buildComponent(this).inject(this);
+        JsonPlaceholderComponent.Injector.buildComponent(this).inject(this);
     }
 
     @OnClick(R.id.btnFindAllPost)
     public void onClickBtnFindAllPost() {
-        jsonPlaceholderApiPresenter.onClickBtnFindAllPost();
+        jsonPlaceholderPresenter.onClickBtnFindAllPost();
     }
 
     @OnClick(R.id.btnFindAllComment)
     public void onClickBtnFindAllComment() {
-        jsonPlaceholderApiPresenter.onClickBtnFindAllComment();
+        jsonPlaceholderPresenter.onClickBtnFindAllComment();
     }
 
     @OnClick(R.id.btnFindAllAlbum)
     public void onClickBtnFindAllAlbum() {
-        jsonPlaceholderApiPresenter.onClickBtnFindAllAlbum();
+        jsonPlaceholderPresenter.onClickBtnFindAllAlbum();
     }
 
     @OnClick(R.id.btnFindAllPhoto)
     public void onClickBtnFindAllPhoto() {
-        jsonPlaceholderApiPresenter.onClickBtnFindAllPhoto();
+        jsonPlaceholderPresenter.onClickBtnFindAllPhoto();
     }
 
     @OnClick(R.id.btnFindAllTodo)
     public void onClickBtnFindAllTodo() {
-        jsonPlaceholderApiPresenter.onClickBtnFindAllTodo();
+        jsonPlaceholderPresenter.onClickBtnFindAllTodo();
     }
 
     @OnClick(R.id.btnFindAllUser)
     public void onClickBtnFindAllUser() {
-        jsonPlaceholderApiPresenter.onClickBtnFindAllUser();
+        jsonPlaceholderPresenter.onClickBtnFindAllUser();
     }
 
 }

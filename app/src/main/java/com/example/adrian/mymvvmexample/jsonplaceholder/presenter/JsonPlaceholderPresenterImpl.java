@@ -9,19 +9,19 @@ import com.example.adrian.mymvvmexample.jppost.view.PostsActivity;
 import com.example.adrian.mymvvmexample.jptodo.view.TodosActivity;
 import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiActivity;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiView;
+import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderView;
 
 /**
  * Created by Adrian_Czigany on 3/8/2017.
  */
 
-public class JsonPlaceholderApiPresenterImpl implements JsonPlaceholderApiPresenter {
+public class JsonPlaceholderPresenterImpl implements JsonPlaceholderPresenter {
 
-    private static final String TAG = JsonPlaceholderApiPresenterImpl.class.getName();
+    private static final String TAG = JsonPlaceholderPresenterImpl.class.getName();
 
-    private JsonPlaceholderApiView jsonPlaceholderApiView;
+    private JsonPlaceholderView jsonPlaceholderApiView;
 
-    public JsonPlaceholderApiPresenterImpl(JsonPlaceholderApiView jsonPlaceholderApiView) {
+    public JsonPlaceholderPresenterImpl(JsonPlaceholderView jsonPlaceholderApiView) {
         this.jsonPlaceholderApiView = jsonPlaceholderApiView;
     }
 

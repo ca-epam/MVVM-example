@@ -4,7 +4,7 @@ package com.example.adrian.mymvvmexample.jsonplaceholder.presenter;
  * Created by Adrian_Czigany on 3/8/2017.
  */
 
-public interface JsonPlaceholderApiPresenter {
+public interface JsonPlaceholderPresenter {
 
     public void onClickBtnFindAllPost();
 

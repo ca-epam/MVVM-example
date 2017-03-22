@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.databinding.ListItemUserBinding;
 import com.example.adrian.mymvvmexample.jpuser.viewmodel.UserViewModel;
-import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderApiAdapter;
+import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderAdapter;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import java.util.List;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder> {
 
-    private static final String TAG = JsonPlaceholderApiAdapter.class.getName();
+    private static final String TAG = JsonPlaceholderAdapter.class.getName();
 
     List<UserViewModel> list;
 

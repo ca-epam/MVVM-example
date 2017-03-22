@@ -11,15 +11,15 @@ import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
  * Created by Adrian_Czigany on 3/16/2017.
  */
 
-public class JsonPlaceholderApiHandler {
+public class JsonPlaceholderHandler {
 
     private Context context;
 
-    public JsonPlaceholderApiHandler(Context context) {
+    public JsonPlaceholderHandler(Context context) {
         this.context = context;
     }
 
-    private static final String TAG = JsonPlaceholderApiHandler.class.getName();
+    private static final String TAG = JsonPlaceholderHandler.class.getName();
 
     public void onClickBtnJsonPlaceholderList(View view) {
         Log.i(TAG, "OnClickBtnPost method");
