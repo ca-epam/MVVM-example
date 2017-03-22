@@ -2,7 +2,6 @@ package com.example.adrian.mymvvmexample.base;
 
 import android.content.Intent;
 import android.databinding.BaseObservable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -10,7 +9,7 @@ import android.view.MenuItem;
  * Created by Adrian_Czigany on 3/20/2017.
  */
 
-public abstract class BaseViewModel<A extends AppCompatActivity> extends BaseObservable {
+public abstract class BaseViewModel<A extends BaseActivity> extends BaseObservable {
 
     protected A activity;
 

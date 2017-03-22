@@ -6,7 +6,6 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -14,7 +13,7 @@ import android.view.MenuItem;
  * Created by Adrian_Czigany on 3/20/2017.
  */
 
-public abstract class BindingActivity<B extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity {
+public abstract class BindingActivity<B extends ViewDataBinding, VM extends BaseViewModel> extends BaseActivity {
 
     private B binding;
     private VM viewModel;
