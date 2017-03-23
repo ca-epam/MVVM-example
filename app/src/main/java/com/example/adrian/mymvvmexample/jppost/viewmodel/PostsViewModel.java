@@ -56,24 +56,17 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
         postsModel.unRegisterCallback();
     }
 
-    private void setUpRecyclerView(List<PostItemViewModel> postItemViewModels) {
-        postItemAdapter = new PostItemAdapter(postItemViewModels);
-
-        getActivity().getBinding().rvPosts.setAdapter(postItemAdapter);
-    }
-
     private List<PostItemViewModel> convertToViewModel(List<Post> posts) {
         List<PostItemViewModel> postItemViewModels = new ArrayList<>();
         for (Post p : posts) {
             postItemViewModels.add(new PostItemViewModel(p));
         }
-        setPostItemViewModels(postItemViewModels);
         return postItemViewModels;
     }
 
     @Override
     public void onFindAllPostSuccess(List<Post> posts) {
-        setUpRecyclerView(convertToViewModel(posts));
+        setPostItemViewModels(convertToViewModel(posts));
     }
 
     @Override
