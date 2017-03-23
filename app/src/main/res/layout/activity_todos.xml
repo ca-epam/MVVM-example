@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <data/>
+    <data>
+
+        <variable
+            name="todosVM"
+            type="com.example.adrian.mymvvmexample.jptodo.viewmodel.TodosViewModel" />
+
+    </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,10 +16,14 @@
         android:layout_height="match_parent"
         tools:context="com.example.adrian.mymvvmexample.jptodo.view.TodosActivity">
 
-        <TextView
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvTodos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="todos activity" />
+            app:listItemLayout="@{todosVM.todoItemLayoutId}"
+            app:listItems="@{todosVM.todoItemViewModels}"
+            app:variableId="@{todosVM.variableId}" />
 
     </LinearLayout>
+
 </layout>
