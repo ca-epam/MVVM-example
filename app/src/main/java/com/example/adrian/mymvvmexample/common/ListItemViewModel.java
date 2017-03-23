@@ -1,4 +1,4 @@
-package com.example.adrian.mymvvmexample.jppost.viewmodel;
+package com.example.adrian.mymvvmexample.common;
 
 import android.databinding.BaseObservable;
 
@@ -7,5 +7,4 @@ import android.databinding.BaseObservable;
  */
 
 public abstract class ListItemViewModel extends BaseObservable {
-//    public abstract int getViewType();
 }

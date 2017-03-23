@@ -3,6 +3,7 @@ package com.example.adrian.mymvvmexample.jppost.viewmodel;
 import android.databinding.Bindable;
 
 import com.example.adrian.mymvvmexample.BR;
+import com.example.adrian.mymvvmexample.common.ListItemViewModel;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Post;
 
 /**

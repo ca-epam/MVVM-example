@@ -1,5 +1,6 @@
 package com.example.adrian.mymvvmexample.jpcomment.view;
 
+import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BindingActivity;
 import com.example.adrian.mymvvmexample.databinding.ActivityCommentsBinding;
@@ -21,7 +22,7 @@ public class CommentsActivity extends BindingActivity<ActivityCommentsBinding, C
 
     @Override
     public int getVariable() {
-        return 0;
+        return BR.commentsVM;
     }
 
     @Override

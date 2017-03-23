@@ -1,10 +1,12 @@
 package com.example.adrian.mymvvmexample.jpcomment.viewmodel;
 
+import android.databinding.Bindable;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.example.adrian.mymvvmexample.BR;
+import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BaseViewModel;
 import com.example.adrian.mymvvmexample.jpcomment.model.CommentsModel;
-import com.example.adrian.mymvvmexample.jpcomment.view.CommentItemAdapter;
 import com.example.adrian.mymvvmexample.jpcomment.view.CommentsActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Comment;
 
@@ -19,14 +21,21 @@ public class CommentsViewModel extends BaseViewModel<CommentsActivity> implement
 
     private CommentsModel commentsModel;
 
-    private CommentItemAdapter commentItemAdapter;
+    private List<CommentItemViewModel> commentItemViewModels = new ArrayList<>();
+
+    private int commentItemLayoutId = R.layout.list_item_comment;
+
+    private int variableId = BR.commentItemVM;
 
     public CommentsViewModel(CommentsActivity commentsActivity, CommentsModel commentsModel) {
         super(commentsActivity);
         this.commentsModel = commentsModel;
 
-        getActivity().getBinding().rvComments.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        init();
+    }
 
+    private void init() {
+        getActivity().getBinding().rvComments.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         commentsModel.findAllComment();
     }
 
@@ -42,12 +51,6 @@ public class CommentsViewModel extends BaseViewModel<CommentsActivity> implement
         commentsModel.unRegisterCallback();
     }
 
-    private void setUpRecyclerView(List<CommentItemViewModel> commentItemViewModels) {
-        commentItemAdapter = new CommentItemAdapter(commentItemViewModels);
-
-        getActivity().getBinding().rvComments.setAdapter(commentItemAdapter);
-    }
-
     private List<CommentItemViewModel> convertToViewModel(List<Comment> comments) {
         List<CommentItemViewModel> commentItemViewModels = new ArrayList<>();
         for (Comment c : comments) {
@@ -59,11 +62,31 @@ public class CommentsViewModel extends BaseViewModel<CommentsActivity> implement
 
     @Override
     public void onFindAllCommentSuccess(List<Comment> comments) {
-        setUpRecyclerView(convertToViewModel(comments));
+        setCommentItemViewModels(convertToViewModel(comments));
     }
 
     @Override
     public void onFindAllCommentError(Throwable t) {
         t.printStackTrace();
+    }
+
+    @Bindable
+    public List<CommentItemViewModel> getCommentItemViewModels() {
+        return commentItemViewModels;
+    }
+
+    public void setCommentItemViewModels(List<CommentItemViewModel> commentItemViewModels) {
+        this.commentItemViewModels = commentItemViewModels;
+        notifyPropertyChanged(BR.commentItemViewModels);
+    }
+
+    @Bindable
+    public int getCommentItemLayoutId() {
+        return commentItemLayoutId;
+    }
+
+    @Bindable
+    public int getVariableId() {
+        return variableId;
     }
 }

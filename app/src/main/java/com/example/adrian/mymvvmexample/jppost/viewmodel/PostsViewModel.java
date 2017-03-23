@@ -7,7 +7,6 @@ import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BaseViewModel;
 import com.example.adrian.mymvvmexample.jppost.model.PostsModel;
-import com.example.adrian.mymvvmexample.jppost.view.PostItemAdapter;
 import com.example.adrian.mymvvmexample.jppost.view.PostsActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Post;
 
@@ -24,13 +23,11 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
 
     private PostsModel postsModel;
 
-    private PostItemAdapter postItemAdapter;
-
     private List<PostItemViewModel> postItemViewModels = new ArrayList<>();
 
     private int variableId = BR.postItemVM;
 
-    private int itemLayoutId = R.layout.list_item_post;
+    private int postItemLayoutId = R.layout.list_item_post;
 
     public PostsViewModel(PostsActivity activity, PostsModel postsModel) {
         super(activity);
@@ -90,7 +87,7 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
     }
 
     @Bindable
-    public int getItemLayoutId() {
-        return itemLayoutId;
+    public int getPostItemLayoutId() {
+        return postItemLayoutId;
     }
 }

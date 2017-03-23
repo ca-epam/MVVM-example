@@ -3,8 +3,6 @@ package com.example.adrian.mymvvmexample.common;
 import android.databinding.BindingAdapter;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.adrian.mymvvmexample.jppost.viewmodel.ListItemViewModel;
-
 import java.util.List;
 
 /**

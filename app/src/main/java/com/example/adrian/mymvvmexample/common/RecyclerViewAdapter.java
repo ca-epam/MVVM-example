@@ -6,8 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.example.adrian.mymvvmexample.jppost.viewmodel.ListItemViewModel;
-
 import java.util.List;
 
 /**

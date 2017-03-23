@@ -1,16 +1,16 @@
 package com.example.adrian.mymvvmexample.jpcomment.viewmodel;
 
-import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.example.adrian.mymvvmexample.BR;
+import com.example.adrian.mymvvmexample.common.ListItemViewModel;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Comment;
 
 /**
  * Created by Adrian_Czigany on 3/22/2017.
  */
 
-public class CommentItemViewModel extends BaseObservable {
+public class CommentItemViewModel extends ListItemViewModel {
 
     private Comment comment;
 
