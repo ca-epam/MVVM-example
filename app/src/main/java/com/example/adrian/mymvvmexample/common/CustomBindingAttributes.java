@@ -3,7 +3,6 @@ package com.example.adrian.mymvvmexample.common;
 import android.databinding.BindingAdapter;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.jppost.viewmodel.ListItemViewModel;
 
 import java.util.List;
@@ -55,7 +54,7 @@ public final class CustomBindingAttributes {
 
     @BindingAdapter(value = {"listItems", "listItemLayout", "variableId"}, requireAll = true)
     public static void setupRecyclerViewAdapter(RecyclerView recyclerView, List<? extends ListItemViewModel> items, int itemLayout, int variableId) {
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(items, itemLayout, BR.postItemVM);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(items, itemLayout, variableId);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 

@@ -28,7 +28,7 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
 
     private List<PostItemViewModel> postItemViewModels = new ArrayList<>();
 
-    private int variableId = getActivity().getVariable();
+    private int variableId = BR.postItemVM;
 
     private int itemLayoutId = R.layout.list_item_post;
 

@@ -32,14 +32,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public BindingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         ViewDataBinding dataBinding = DataBindingUtil.inflate(layoutInflater, itemLayout, parent, false);
-
         return new BindingViewHolder(dataBinding);
     }
 
     @Override
     public void onBindViewHolder(BindingViewHolder holder, int position) {
-//        holder.getBinding().setVariable(BR.viewModel, items.get(position));
-//        holder.getBinding().executePendingBindings();
         ListItemViewModel itemViewModel = items.get(position);
         holder.bind(itemViewModel, variableId);
     }
@@ -48,12 +45,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public int getItemCount() {
         return items.size();
     }
-
-//    public void setItems(List<ListItemViewModel> items) {
-//        this.items = items;
-//        notifyDataSetChanged();
-//    }
-
 
     static class BindingViewHolder extends RecyclerView.ViewHolder {
         private final ViewDataBinding binding;
