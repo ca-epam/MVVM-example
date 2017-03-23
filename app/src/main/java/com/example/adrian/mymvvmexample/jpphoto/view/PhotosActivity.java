@@ -1,5 +1,6 @@
 package com.example.adrian.mymvvmexample.jpphoto.view;
 
+import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BindingActivity;
 import com.example.adrian.mymvvmexample.databinding.ActivityPhotosBinding;
@@ -21,7 +22,7 @@ public class PhotosActivity extends BindingActivity<ActivityPhotosBinding, Photo
 
     @Override
     public int getVariable() {
-        return 0;
+        return BR.photosVM;
     }
 
     @Override

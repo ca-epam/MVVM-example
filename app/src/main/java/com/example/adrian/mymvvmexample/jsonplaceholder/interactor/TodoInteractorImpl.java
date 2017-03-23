@@ -7,46 +7,82 @@ import com.example.adrian.mymvvmexample.jsonplaceholder.service.TodoService;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Adrian_Czigany on 3/8/2017.
  */
 
 public class TodoInteractorImpl implements TodoInteractor {
-
     private static final String TAG = TodoInteractorImpl.class.getName();
 
+    private Observer<List<Todo>> todoListObserver;
+    private Observer<Todo> todoObserver;
 
     private TodoService todoService;
 
     public TodoInteractorImpl(TodoService todoService) {
         this.todoService = todoService;
 
+        createTodoListObserver();
+        createTodoObserver();
+
+    }
+
+    private void createTodoListObserver() {
+        Log.i(TAG, "createTodoListObserver ...");
+
+        todoListObserver = new Observer<List<Todo>>() {
+            @Override
+            public void onCompleted() {
+                Log.i(TAG, "onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.i(TAG, "onError");
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onNext(List<Todo> todos) {
+                Log.i(TAG, "onNext");
+                Log.i(TAG, todos.toString());
+            }
+        };
+    }
+
+    private void createTodoObserver() {
+        Log.i(TAG, "createTodoObserver ...");
+
+        todoObserver = new Observer<Todo>() {
+            @Override
+            public void onCompleted() {
+                Log.i(TAG, "onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.i(TAG, "onError");
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onNext(Todo todo) {
+                Log.i(TAG, "onNext");
+                Log.i(TAG, todo.toString());
+            }
+        };
     }
 
     @Override
     public void findAllTodo() {
-        Call<List<Todo>> call = todoService.findAllTodo();
-
-        Log.i(TAG, call.request().url().toString());
-
-        call.enqueue(new Callback<List<Todo>>() {
-            @Override
-            public void onResponse(Call<List<Todo>> call, Response<List<Todo>> response) {
-                Log.i(TAG, "onResponse");
-                int statusCode = response.code();
-                List<Todo> todos = response.body();
-                Log.i(TAG, todos.toString());
-            }
-
-            @Override
-            public void onFailure(Call<List<Todo>> call, Throwable t) {
-                Log.i(TAG, "onFailure");
-                System.out.println(t.getMessage());
-            }
-        });
+        todoService.findAllTodo()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(todoListObserver);
     }
+
 }

@@ -4,6 +4,8 @@ import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.jpphoto.model.PhotosModel;
 import com.example.adrian.mymvvmexample.jpphoto.view.PhotosActivity;
 import com.example.adrian.mymvvmexample.jpphoto.viewmodel.PhotosViewModel;
+import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderInteractorModule;
+import com.example.adrian.mymvvmexample.jsonplaceholder.service.PhotoService;
 
 import dagger.Module;
 import dagger.Provides;
@@ -12,7 +14,7 @@ import dagger.Provides;
  * Created by Adrian_Czigany on 3/22/2017.
  */
 
-@Module
+@Module(includes = JsonPlaceholderInteractorModule.class)
 public class PhotosModule {
 
     private PhotosActivity photosActivity;
@@ -29,8 +31,8 @@ public class PhotosModule {
 
     @ActivityScope
     @Provides
-    PhotosModel providesPhotosModel() {
-        return new PhotosModel();
+    PhotosModel providesPhotosModel(PhotoService photoService) {
+        return new PhotosModel(photoService);
     }
 
     @ActivityScope

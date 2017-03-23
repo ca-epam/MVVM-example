@@ -4,8 +4,8 @@ import com.example.adrian.mymvvmexample.jsonplaceholder.model.Todo;
 
 import java.util.List;
 
-import retrofit2.Call;
 import retrofit2.http.GET;
+import rx.Observable;
 
 /**
  * Created by Adrian_Czigany on 3/8/2017.
@@ -14,6 +14,6 @@ import retrofit2.http.GET;
 public interface TodoService {
 
     @GET("/todos")
-    Call<List<Todo>> findAllTodo();
+    Observable<List<Todo>> findAllTodo();
 
 }
