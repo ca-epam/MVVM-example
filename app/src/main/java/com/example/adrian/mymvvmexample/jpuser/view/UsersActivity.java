@@ -1,47 +1,32 @@
 package com.example.adrian.mymvvmexample.jpuser.view;
 
-import android.databinding.DataBindingUtil;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-
+import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BindingActivity;
 import com.example.adrian.mymvvmexample.databinding.ActivityUsersBinding;
 import com.example.adrian.mymvvmexample.jpuser.di.UsersComponent;
 import com.example.adrian.mymvvmexample.jpuser.viewmodel.UsersViewModel;
 
+import javax.inject.Inject;
+
 public class UsersActivity extends BindingActivity<ActivityUsersBinding, UsersViewModel> {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_users);
-
-        UsersComponent.Injector.buildComponent(this).inject(this);
-
-        ActivityUsersBinding activityUsersBinding = DataBindingUtil.setContentView(this, R.layout.activity_users);
-
-//        UsersAdapter usersAdapter = new UsersAdapter(UsersTestData.getUserViewModelData());
-        activityUsersBinding.rvUsers.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-//        activityUsersBinding.rvUsers.setAdapter(usersAdapter);
-
-//        userInteractorImpl.toString();
-//        userInteractorImpl.test();
-
-    }
+    @Inject
+    UsersViewModel usersViewModel;
 
     @Override
     public UsersViewModel onCreate() {
-        return null;
+        UsersComponent.Injector.buildComponent(this).inject(this);
+        return usersViewModel;
     }
 
     @Override
     public int getVariable() {
-        return 0;
+        return BR.usersVM;
     }
 
     @Override
     public int getLayoutId() {
-        return 0;
+        return R.layout.activity_users;
     }
 }

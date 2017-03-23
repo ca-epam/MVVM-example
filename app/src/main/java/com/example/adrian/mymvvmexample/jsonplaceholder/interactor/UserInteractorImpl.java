@@ -7,9 +7,9 @@ import com.example.adrian.mymvvmexample.jsonplaceholder.service.UserService;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Adrian_Czigany on 3/8/2017.
@@ -19,37 +19,70 @@ public class UserInteractorImpl implements UserInteractor {
 
     private static final String TAG = UserInteractorImpl.class.getName();
 
+    private Observer<List<User>> userListObserver;
+    private Observer<User> userObserver;
+
+
     private UserService userService;
 
     public UserInteractorImpl(UserService userService) {
         this.userService = userService;
+
+        createUserListObserver();
+        createUserObserver();
     }
 
-    @Override
-    public void test() {
-        userService.toString();
+    private void createUserListObserver() {
+        Log.i(TAG, "createUserListObserver ...");
+
+        userListObserver = new Observer<List<User>>() {
+            @Override
+            public void onCompleted() {
+                Log.i(TAG, "onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.i(TAG, "onError");
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onNext(List<User> users) {
+                Log.i(TAG, "onNext");
+                Log.i(TAG, users.toString());
+            }
+        };
+    }
+
+    private void createUserObserver() {
+        Log.i(TAG, "createUserObserver ...");
+
+        userObserver = new Observer<User>() {
+            @Override
+            public void onCompleted() {
+                Log.i(TAG, "onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.i(TAG, "onError");
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onNext(User user) {
+                Log.i(TAG, "onNext");
+                Log.i(TAG, user.toString());
+            }
+        };
     }
 
     @Override
     public void findAllUser() {
-        Call<List<User>> call = userService.findAllUser();
-
-        Log.i(TAG, call.request().url().toString());
-
-        call.enqueue(new Callback<List<User>>() {
-            @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                Log.i(TAG, "onResponse");
-                int statusCode = response.code();
-                List<User> users = response.body();
-                Log.i(TAG, users.toString());
-            }
-
-            @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
-                Log.i(TAG, "onFailure");
-                System.out.println(t.getMessage());
-            }
-        });
+        userService.findAllUser()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(userListObserver);
     }
 }

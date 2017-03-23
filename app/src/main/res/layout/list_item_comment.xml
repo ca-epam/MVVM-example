@@ -3,6 +3,7 @@
 
     <data>
 
+
         <variable
             name="commentItemVM"
             type="com.example.adrian.mymvvmexample.jpcomment.viewmodel.CommentItemViewModel" />

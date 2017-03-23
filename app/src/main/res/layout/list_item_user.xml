@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="id: " />
+                android:text="name: " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="title: " />
+                android:text="username: " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="body: " />
+                android:text="email: " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="body: " />
+                android:text="address: " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="body: " />
+                android:text="phone: " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="body: " />
+                android:text="website: " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -141,7 +141,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="body: " />
+                android:text="company: " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -158,7 +158,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="body: " />
+                android:text="website: " />
 
             <EditText
                 android:layout_width="wrap_content"
