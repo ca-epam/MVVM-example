@@ -7,7 +7,6 @@ import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BaseViewModel;
 import com.example.adrian.mymvvmexample.jpalbum.model.AlbumsModel;
-import com.example.adrian.mymvvmexample.jpalbum.view.AlbumItemAdapter;
 import com.example.adrian.mymvvmexample.jpalbum.view.AlbumsActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Album;
 
@@ -23,8 +22,6 @@ public class AlbumsViewModel extends BaseViewModel<AlbumsActivity> implements Al
     private static final String TAG = AlbumsViewModel.class.getName();
 
     private AlbumsModel albumsModel;
-
-    private AlbumItemAdapter albumItemAdapter;
 
     private List<AlbumItemViewModel> albumItemViewModels = new ArrayList<>();
 
