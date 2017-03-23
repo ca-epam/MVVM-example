@@ -26,10 +26,10 @@ public class RecyclerViewBindingAdapter {
         getAdapter(recyclerView).setItemLayout(itemLayout);
     }
 
-    private static RecyclerViewAdapter getAdapter(RecyclerView recyclerView) {
-        RecyclerViewAdapter adapter = (RecyclerViewAdapter) recyclerView.getAdapter();
+    private static RecyclerViewAdapter3 getAdapter(RecyclerView recyclerView) {
+        RecyclerViewAdapter3 adapter = (RecyclerViewAdapter3) recyclerView.getAdapter();
         if (adapter == null) {
-            adapter = new RecyclerViewAdapter();
+            adapter = new RecyclerViewAdapter3();
             recyclerView.setAdapter(adapter);
         }
         return adapter;

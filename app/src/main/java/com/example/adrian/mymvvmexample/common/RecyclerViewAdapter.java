@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 
 import com.example.adrian.mymvvmexample.jppost.viewmodel.ListItemViewModel;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -17,69 +16,44 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.BindingViewHolder> {
 
-    private int column;
+    private List<? extends ListItemViewModel> items;
 
-    private boolean displayFullRows;
+    private int itemLayout;
 
-    private List<ListItemViewModel> items;
+    private int variableId;
 
-    private List<Integer> itemLayouts;
-
-    private List<Integer> viewTypes;
-
-    public RecyclerViewAdapter() {
+    public RecyclerViewAdapter(List<? extends ListItemViewModel> items, int itemLayout, int variableId) {
+        this.items = items;
+        this.itemLayout = itemLayout;
+        this.variableId = variableId;
     }
 
     @Override
     public BindingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        int itemLayout = itemLayouts.get(viewTypes != null ? viewTypes.indexOf(viewType) : viewType);
-        ViewDataBinding dataBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), itemLayout, parent, false);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        ViewDataBinding dataBinding = DataBindingUtil.inflate(layoutInflater, itemLayout, parent, false);
+
         return new BindingViewHolder(dataBinding);
     }
 
     @Override
     public void onBindViewHolder(BindingViewHolder holder, int position) {
 //        holder.getBinding().setVariable(BR.viewModel, items.get(position));
-        holder.getBinding().executePendingBindings();
+//        holder.getBinding().executePendingBindings();
+        ListItemViewModel itemViewModel = items.get(position);
+        holder.bind(itemViewModel, variableId);
     }
 
     @Override
     public int getItemCount() {
-        int itemCount = items == null ? 0 : items.size();
-        if (itemCount > column && displayFullRows) {
-            itemCount = getRoundDownItemCount(itemCount);
-        }
-        return itemCount;
+        return items.size();
     }
 
-    public void setItems(List<ListItemViewModel> items) {
-        this.items = items;
-        notifyDataSetChanged();
-    }
+//    public void setItems(List<ListItemViewModel> items) {
+//        this.items = items;
+//        notifyDataSetChanged();
+//    }
 
-    public void setItemLayout(int itemLayout) {
-        this.itemLayouts = Collections.singletonList(itemLayout);
-    }
-
-    public void setItemLayouts(List<Integer> itemLayouts) {
-        this.itemLayouts = itemLayouts;
-    }
-
-    public void setViewTypes(List<Integer> viewTypes) {
-        this.viewTypes = viewTypes;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
-    public void displayFullRows(boolean displayFullRows) {
-        this.displayFullRows = displayFullRows;
-    }
-
-    private int getRoundDownItemCount(int itemCount) {
-        return itemCount - itemCount % column;
-    }
 
     static class BindingViewHolder extends RecyclerView.ViewHolder {
         private final ViewDataBinding binding;
@@ -88,8 +62,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.binding = binding;
         }
 
-        public ViewDataBinding getBinding() {
-            return binding;
+        public void bind(ListItemViewModel listItemViewModel, int variableId) {
+            binding.setVariable(variableId, listItemViewModel);
+            binding.executePendingBindings();
         }
     }
 

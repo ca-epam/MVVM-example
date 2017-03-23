@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.adrian.mymvvmexample.jppost.view.PostsActivity">
 
-    <data/>
+    <data>
+
+        <variable
+            name="postVM"
+            type="com.example.adrian.mymvvmexample.jppost.viewmodel.PostsViewModel" />
+
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,23 +18,17 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvTemp"
+            android:id="@+id/str"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvPosts"
             android:layout_width="wrap_content"
-            android:layout_height="250dp"
-            />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvPosts2"
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
-            app:adapter='@{"asd"}'
-            />
+            android:layout_height="wrap_content"
+            app:listItemLayout="@{postVM.itemLayoutId}"
+            app:listItems="@{postVM.postItemViewModels}"
+            app:variableId="@{postVM.variableId}" />
 
     </LinearLayout>
 

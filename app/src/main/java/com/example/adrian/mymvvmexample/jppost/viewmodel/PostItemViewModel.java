@@ -1,6 +1,5 @@
 package com.example.adrian.mymvvmexample.jppost.viewmodel;
 
-import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.example.adrian.mymvvmexample.BR;
@@ -10,7 +9,7 @@ import com.example.adrian.mymvvmexample.jsonplaceholder.model.Post;
  * Created by Adrian_Czigany on 3/21/2017.
  */
 
-public class PostItemViewModel extends BaseObservable {
+public class PostItemViewModel extends ListItemViewModel {
 
     private Post post;
 
