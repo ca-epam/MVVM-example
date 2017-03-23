@@ -7,7 +7,7 @@
     <data>
 
         <variable
-            name="postVM"
+            name="postsVM"
             type="com.example.adrian.mymvvmexample.jppost.viewmodel.PostsViewModel" />
 
     </data>
@@ -21,9 +21,9 @@
             android:id="@+id/rvPosts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:listItemLayout="@{postVM.postItemLayoutId}"
-            app:listItems="@{postVM.postItemViewModels}"
-            app:variableId="@{postVM.variableId}" />
+            app:listItemLayout="@{postsVM.postItemLayoutId}"
+            app:listItems="@{postsVM.postItemViewModels}"
+            app:variableId="@{postsVM.variableId}" />
 
     </LinearLayout>
 

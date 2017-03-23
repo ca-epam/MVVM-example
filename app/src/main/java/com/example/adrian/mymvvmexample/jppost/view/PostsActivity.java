@@ -22,7 +22,7 @@ public class PostsActivity extends BindingActivity<ActivityPostsBinding, PostsVi
 
     @Override
     public int getVariable() {
-        return BR.postVM;
+        return BR.postsVM;
     }
 
     @Override

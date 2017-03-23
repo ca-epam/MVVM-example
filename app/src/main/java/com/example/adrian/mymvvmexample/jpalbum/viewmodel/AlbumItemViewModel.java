@@ -1,21 +1,18 @@
 package com.example.adrian.mymvvmexample.jpalbum.viewmodel;
 
-import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.example.adrian.mymvvmexample.BR;
-import com.example.adrian.mymvvmexample.jpalbum.view.AlbumItemAdapter;
+import com.example.adrian.mymvvmexample.common.ListItemViewModel;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Album;
 
 /**
  * Created by Adrian_Czigany on 3/22/2017.
  */
 
-public class AlbumItemViewModel extends BaseObservable {
+public class AlbumItemViewModel extends ListItemViewModel {
 
     private Album album;
-
-    private AlbumItemAdapter albumItemAdapter;
 
     public AlbumItemViewModel(Album album) {
         this.album = album;
