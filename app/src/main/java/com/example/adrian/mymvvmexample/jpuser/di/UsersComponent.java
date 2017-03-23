@@ -3,7 +3,7 @@ package com.example.adrian.mymvvmexample.jpuser.di;
 import com.example.adrian.mymvvmexample.app.di.AppComponent;
 import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
-import com.example.adrian.mymvvmexample.jpuser.viewmodel.UserViewModel;
+import com.example.adrian.mymvvmexample.jpuser.viewmodel.UserItemViewModel;
 
 import dagger.Component;
 
@@ -15,7 +15,7 @@ import dagger.Component;
 @ActivityScope
 public interface UsersComponent {
 
-    void inject(UserViewModel userViewModel);
+    void inject(UserItemViewModel userViewModel);
 
     void inject(UsersActivity usersActivity);
 
