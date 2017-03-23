@@ -29,7 +29,10 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
         super(activity);
         this.postsModel = postsModel;
 
+
+
         getActivity().getBinding().rvPosts.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        getActivity().getBinding().rvPosts2.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
 
         postsModel.findAllPost();
     }

@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.jppost.viewmodel.ListItemViewModel;
 
 import java.util.Collections;
@@ -40,7 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(BindingViewHolder holder, int position) {
-        holder.getBinding().setVariable(BR.viewModel, items.get(position));
+//        holder.getBinding().setVariable(BR.viewModel, items.get(position));
         holder.getBinding().executePendingBindings();
     }
 

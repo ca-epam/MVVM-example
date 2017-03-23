@@ -11,10 +11,23 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/tvTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvPosts"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="250dp"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPosts2"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            app:adapter='@{"asd"}'
             />
 
     </LinearLayout>

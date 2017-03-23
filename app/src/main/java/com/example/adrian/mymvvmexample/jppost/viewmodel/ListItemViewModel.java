@@ -7,5 +7,5 @@ import android.databinding.BaseObservable;
  */
 
 public abstract class ListItemViewModel extends BaseObservable {
-    public abstract int getViewType();
+//    public abstract int getViewType();
 }
