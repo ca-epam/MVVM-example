@@ -1,5 +1,7 @@
 package com.example.adrian.mymvvmexample.jppost.view;
 
+import android.content.Intent;
+
 import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BindingActivity;
@@ -28,6 +30,11 @@ public class PostsActivity extends BindingActivity<ActivityPostsBinding, PostsVi
     @Override
     public int getLayoutId() {
         return R.layout.activity_posts;
+    }
+
+    public void openPostPage() {
+        Intent intent = new Intent(PostsActivity.this, PostActivity.class);
+        startActivity(intent);
     }
 
 }

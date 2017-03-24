@@ -43,6 +43,9 @@ dependencies {
     //    compile group: 'io.reactivex', name: 'rxjava', version: '1.2.7'
 
     compile project(':app-logic-library')
+
+    //    apt 'com.google.dagger:dagger-compiler:2.5'
+//    apt 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.android.support:support-v4:25.2.0'
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
@@ -57,9 +60,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
-    annotationProcessor "com.google.dagger:dagger-compiler:2.4"
-//    apt 'com.google.dagger:dagger-compiler:2.5'
-//    apt 'com.jakewharton:butterknife-compiler:8.5.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
     provided 'javax.annotation:jsr250-api:1.0'
 }

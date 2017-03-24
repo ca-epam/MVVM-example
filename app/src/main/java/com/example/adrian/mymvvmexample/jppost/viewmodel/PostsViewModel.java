@@ -97,5 +97,11 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
     public void onItemClick(int position, Object item) {
         PostItemViewModel postItemViewModel = (PostItemViewModel) item;
         Log.i(TAG, "onItemClick ...." + postItemViewModel.toString());
+        openPostPage();
     }
+
+    private void openPostPage() {
+        getActivity().openPostPage();
+    }
+
 }

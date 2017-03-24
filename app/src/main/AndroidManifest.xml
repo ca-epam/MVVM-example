@@ -29,7 +29,8 @@
         <activity android:name=".jpalbum.view.AlbumsActivity" />
         <activity android:name=".jpcomment.view.CommentsActivity" />
         <activity android:name=".jpphoto.view.PhotosActivity" />
-        <activity android:name=".jptodo.view.TodosActivity"></activity>
+        <activity android:name=".jptodo.view.TodosActivity" />
+        <activity android:name=".jppost.view.PostActivity"></activity>
     </application>
 
 </manifest>
