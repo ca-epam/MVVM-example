@@ -85,41 +85,11 @@ public abstract class BindingActivity<B extends ViewDataBinding, VM extends Base
         viewModel.onDestroy();
     }
 
-//    @Override
-//    public void onPostCreate(Bundle savedInstanceState) {
-//        super.onPostCreate(savedInstanceState);
-//        viewModel.onPostCreate(savedInstanceState);
-//    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         viewModel.onOptionsItemSelected(item);
         return super.onOptionsItemSelected(item);
     }
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        viewModel.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//    }
-
-//    @Override
-//    public void onConfigurationChanged(Configuration newConfig) {
-//        super.onConfigurationChanged(newConfig);
-//        viewModel.onConfigurationChanged(newConfig);
-//    }
-
-//    @Override
-//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        viewModel.onRestoreInstanceState(savedInstanceState);
-//    }
-
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//        viewModel.onSaveInstanceState(outState);
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -127,23 +97,16 @@ public abstract class BindingActivity<B extends ViewDataBinding, VM extends Base
         return super.onCreateOptionsMenu(menu);
     }
 
-//    @Override
-//    public boolean onPrepareOptionsMenu(Menu menu) {
-//        viewModel.onPrepareOptionsMenu(menu);
-//        return super.onPrepareOptionsMenu(menu);
-//    }
-
-//    @Override
-//    public void onWindowFocusChanged(boolean hasFocus) {
-//        super.onWindowFocusChanged(hasFocus);
-//        viewModel.onWindowFocusChanged(hasFocus);
-//    }
-
-    public abstract VM onCreate();
-
     public VM getViewModel() {
         return viewModel;
     }
+
+    /**
+     * Override for building component and set a ViewModel
+     *
+     * @return the corresponding ViewModel
+     */
+    public abstract VM onCreate();
 
     /**
      * Override for set binding variable

@@ -57,10 +57,6 @@ public abstract class BaseViewModel<A extends BaseActivity> extends BaseObservab
         //Override me!
     }
 
-    public void onBackPressed() {
-        //Override me!
-    }
-
     public void onCreateOptionsMenu(Menu menu) {
         //Override me!
     }
