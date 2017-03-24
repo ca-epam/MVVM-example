@@ -96,6 +96,6 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
     @Override
     public void onItemClick(int position, Object item) {
         PostItemViewModel postItemViewModel = (PostItemViewModel) item;
-        Log.i(TAG, "only body: " + postItemViewModel.getBody());
+        Log.i(TAG, "onItemClick ...." + postItemViewModel.toString());
     }
 }
