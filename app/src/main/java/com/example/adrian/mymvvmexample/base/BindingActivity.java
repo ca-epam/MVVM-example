@@ -9,6 +9,8 @@ import android.support.annotation.LayoutRes;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.adrian.mymvvmexample.BR;
+
 /**
  * Created by Adrian_Czigany on 3/20/2017.
  */
@@ -113,9 +115,11 @@ public abstract class BindingActivity<B extends ViewDataBinding, VM extends Base
      *
      * @return variable id
      */
-    public abstract
+    public
     @IdRes
-    int getVariable();
+    int getVariable() {
+        return BR.viewModel;
+    }
 
     /**
      * Override for set layout resource

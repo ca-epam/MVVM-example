@@ -1,6 +1,5 @@
 package com.example.adrian.mymvvmexample.jppost.view;
 
-import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BindingActivity;
 import com.example.adrian.mymvvmexample.databinding.ActivityPostBinding;
@@ -18,11 +17,6 @@ public class PostActivity extends BindingActivity<ActivityPostBinding, PostViewM
     public PostViewModel onCreate() {
         PostComponent.Injector.buildComponent(this).inject(this);
         return postViewModel;
-    }
-
-    @Override
-    public int getVariable() {
-        return BR.viewModel;
     }
 
     @Override

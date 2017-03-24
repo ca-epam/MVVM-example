@@ -1,6 +1,5 @@
 package com.example.adrian.mymvvmexample.jpuser.view;
 
-import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BindingActivity;
 import com.example.adrian.mymvvmexample.databinding.ActivityUsersBinding;
@@ -18,11 +17,6 @@ public class UsersActivity extends BindingActivity<ActivityUsersBinding, UsersVi
     public UsersViewModel onCreate() {
         UsersComponent.Injector.buildComponent(this).inject(this);
         return usersViewModel;
-    }
-
-    @Override
-    public int getVariable() {
-        return BR.viewModel;
     }
 
     @Override
