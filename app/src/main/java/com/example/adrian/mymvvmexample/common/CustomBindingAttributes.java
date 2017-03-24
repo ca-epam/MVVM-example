@@ -11,67 +11,31 @@ import java.util.List;
 
 public final class CustomBindingAttributes {
 
+    private static final String TAG = CustomBindingAttributes.class.getName();
+
     private CustomBindingAttributes() {
     }
 
-//    @BindingAdapter("app:sg")
-//    public static void sgTextView(TextView textView, String s) {
-//        textView.setText(s);
-//    }
-
-//    @BindingAdapter("app:adapter")
-//    public static void setRecyclerViewAdapter(RecyclerView recyclerView, List<ListItemViewModel> items) {
-////        getAdapter(recyclerView).set
-////                recyclerView.setad
-//
-//    }
-
-//    @BindingAdapter({"app:adapter", "app:layout"})
-//    public static void setupRecyclerViewAdapter(RecyclerView recyclerView, String str, int itemLayout) {
-//        SampleListItemViewModel sampleListItemViewModel1 = new SampleListItemViewModel(1,"title1");
-//        SampleListItemViewModel sampleListItemViewModel2 = new SampleListItemViewModel(2,"title2");
-//        List<SampleListItemViewModel> list = new ArrayList<>();
-//        list.add(sampleListItemViewModel1);
-//        list.add(sampleListItemViewModel2);
-//        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(list, itemLayout, BR.sampleItemVM);
-//        recyclerView.setAdapter(recyclerViewAdapter);
-//        str.toString();
-//    }
-
-//    @BindingAdapter("items")
-//    public static void setupRecyclerViewAdapter(RecyclerView recyclerView, List<? extends ListItemViewModel> items) {
-//        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(items, R.layout.list_item_post, BR.postItemVM);
-//        recyclerView.setAdapter(recyclerViewAdapter);
-//    }
-
-//    @BindingAdapter({"items", "itemLayout"})
-//    public static void setupRecyclerViewAdapter(RecyclerView recyclerView, List<? extends ListItemViewModel> items, int itemLayout) {
-//        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(items, itemLayout, BR.postItemVM);
-//        recyclerView.setAdapter(recyclerViewAdapter);
-//    }
-
     @BindingAdapter(value = {"listItems", "listItemLayout", "variableId"}, requireAll = true)
     public static void setupRecyclerViewAdapter(RecyclerView recyclerView, List<? extends ListItemViewModel> items, int itemLayout, int variableId) {
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(items, itemLayout, variableId);
-        recyclerView.setAdapter(recyclerViewAdapter);
+//        RecyclerViewAdapter<T> recyclerViewAdapter = new RecyclerViewAdapter(items, itemLayout, variableId);
+        RecyclerViewAdapter recyclerViewAdapter = getAdapter(recyclerView);
+        recyclerViewAdapter.setItems(items);
+        recyclerViewAdapter.setItemLayout(itemLayout);
+        recyclerViewAdapter.setVariableId(variableId);
+//        recyclerView.setAdapter(recyclerViewAdapter);
+
     }
 
-//    @BindingAdapter({"app:items", "app:itemLayout"})
-//    public static void setupRecyclerViewAdapter(RecyclerView recyclerView, List<? extends ListItemViewModel> items, int itemLayout) {
-//        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(items, itemLayout, BR.postItemVM);
-//        recyclerView.setAdapter(recyclerViewAdapter);
-//    }
+    @BindingAdapter("onItemClickListener")
+    public static void setupRecyclerViewAdapter(RecyclerView recyclerView, RecyclerViewAdapter.OnItemClickListener onItemClickListener) {
+        getAdapter(recyclerView).setOnItemClickListener(onItemClickListener);
+    }
 
-
-//    @BindingAdapter("app:layout")
-//    public static void setRecyclerViewLayout() {
-//
-//    }
-
-    private static RecyclerViewAdapter3 getAdapter(RecyclerView recyclerView) {
-        RecyclerViewAdapter3 adapter = (RecyclerViewAdapter3) recyclerView.getAdapter();
+    private static RecyclerViewAdapter getAdapter(RecyclerView recyclerView) {
+        RecyclerViewAdapter adapter = (RecyclerViewAdapter) recyclerView.getAdapter();
         if (adapter == null) {
-            adapter = new RecyclerViewAdapter3();
+            adapter = new RecyclerViewAdapter();
             recyclerView.setAdapter(adapter);
         }
         return adapter;

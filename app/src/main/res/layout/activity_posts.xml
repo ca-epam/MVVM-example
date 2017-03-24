@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             app:listItemLayout="@{postsVM.postItemLayoutId}"
             app:listItems="@{postsVM.postItemViewModels}"
-            app:variableId="@{postsVM.variableId}" />
+            app:variableId="@{postsVM.variableId}"
+            app:onItemClickListener="@{postsVM}"/>
 
     </LinearLayout>
 

@@ -57,4 +57,11 @@ public class TodoItemViewModel extends ListItemViewModel {
         this.todo.setCompleted(completed);
         notifyPropertyChanged(BR.completed);
     }
+
+    @Override
+    public String toString() {
+        return "TodoItemViewModel{" +
+                "todo=" + todo +
+                '}';
+    }
 }

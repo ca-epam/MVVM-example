@@ -60,9 +60,8 @@ public class PostItemViewModel extends ListItemViewModel {
 
     @Override
     public String toString() {
-        return "PhotoItemViewModel{" +
+        return "PostItemViewModel{" +
                 "post=" + post +
                 '}';
     }
-
 }

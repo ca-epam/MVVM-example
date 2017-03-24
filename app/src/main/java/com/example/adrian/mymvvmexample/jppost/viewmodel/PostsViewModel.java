@@ -2,10 +2,12 @@ package com.example.adrian.mymvvmexample.jppost.viewmodel;
 
 import android.databinding.Bindable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 
 import com.example.adrian.mymvvmexample.BR;
 import com.example.adrian.mymvvmexample.R;
 import com.example.adrian.mymvvmexample.base.BaseViewModel;
+import com.example.adrian.mymvvmexample.common.RecyclerViewAdapter;
 import com.example.adrian.mymvvmexample.jppost.model.PostsModel;
 import com.example.adrian.mymvvmexample.jppost.view.PostsActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.model.Post;
@@ -17,7 +19,7 @@ import java.util.List;
  * Created by Adrian_Czigany on 3/20/2017.
  */
 
-public class PostsViewModel extends BaseViewModel<PostsActivity> implements PostsModel.OnPostsCallback {
+public class PostsViewModel extends BaseViewModel<PostsActivity> implements PostsModel.OnPostsCallback, RecyclerViewAdapter.OnItemClickListener {
 
     private static final String TAG = PostsViewModel.class.getName();
 
@@ -89,5 +91,11 @@ public class PostsViewModel extends BaseViewModel<PostsActivity> implements Post
     @Bindable
     public int getPostItemLayoutId() {
         return postItemLayoutId;
+    }
+
+    @Override
+    public void onItemClick(int position, Object item) {
+        PostItemViewModel postItemViewModel = (PostItemViewModel) item;
+        Log.i(TAG, "only body: " + postItemViewModel.getBody());
     }
 }
