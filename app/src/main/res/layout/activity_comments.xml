@@ -7,7 +7,7 @@
     <data>
 
         <variable
-            name="commentsVM"
+            name="viewModel"
             type="com.example.adrian.mymvvmexample.jpcomment.viewmodel.CommentsViewModel"/>
     </data>
 
@@ -25,9 +25,9 @@
             android:id="@+id/rvComments"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:listItemLayout="@{commentsVM.commentItemLayoutId}"
-            app:listItems="@{commentsVM.commentItemViewModels}"
-            app:variableId="@{commentsVM.variableId}" />
+            app:listItemLayout="@{viewModel.commentItemLayoutId}"
+            app:listItems="@{viewModel.commentItemViewModels}"
+            app:variableId="@{viewModel.variableId}" />
 
     </LinearLayout>
 

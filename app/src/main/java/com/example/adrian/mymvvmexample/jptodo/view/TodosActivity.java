@@ -23,7 +23,7 @@ public class TodosActivity extends BindingActivity<ActivityTodosBinding, TodosVi
 
     @Override
     public int getVariable() {
-        return BR.todosVM;
+        return BR.viewModel;
     }
 
     @Override

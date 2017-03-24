@@ -22,7 +22,7 @@ public class PostActivity extends BindingActivity<ActivityPostBinding, PostViewM
 
     @Override
     public int getVariable() {
-        return BR.postVM;
+        return BR.viewModel;
     }
 
     @Override

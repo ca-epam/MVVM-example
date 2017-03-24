@@ -22,7 +22,7 @@ public class UsersActivity extends BindingActivity<ActivityUsersBinding, UsersVi
 
     @Override
     public int getVariable() {
-        return BR.usersVM;
+        return BR.viewModel;
     }
 
     @Override

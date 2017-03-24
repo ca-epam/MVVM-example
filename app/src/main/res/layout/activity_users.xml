@@ -5,7 +5,7 @@
     <data>
 
         <variable
-            name="usersVM"
+            name="viewModel"
             type="com.example.adrian.mymvvmexample.jpuser.viewmodel.UsersViewModel" />
     </data>
 
@@ -18,9 +18,9 @@
             android:id="@+id/rvUsers"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:listItemLayout="@{usersVM.userItemLayoutId}"
-            app:listItems="@{usersVM.userItemViewModels}"
-            app:variableId="@{usersVM.variableId}"  />
+            app:listItemLayout="@{viewModel.userItemLayoutId}"
+            app:listItems="@{viewModel.userItemViewModels}"
+            app:variableId="@{viewModel.variableId}"  />
 
     </LinearLayout>
 

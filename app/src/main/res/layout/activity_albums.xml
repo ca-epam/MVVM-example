@@ -7,7 +7,7 @@
     <data>
 
         <variable
-            name="albumsVM"
+            name="viewModel"
             type="com.example.adrian.mymvvmexample.jpalbum.viewmodel.AlbumsViewModel"/>
     </data>
 
@@ -20,9 +20,9 @@
             android:id="@+id/rvAlbums"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:listItemLayout="@{albumsVM.albumItemLayoutId}"
-            app:listItems="@{albumsVM.albumItemViewModels}"
-            app:variableId="@{albumsVM.variableId}" />
+            app:listItemLayout="@{viewModel.albumItemLayoutId}"
+            app:listItems="@{viewModel.albumItemViewModels}"
+            app:variableId="@{viewModel.variableId}" />
 
     </LinearLayout>
 

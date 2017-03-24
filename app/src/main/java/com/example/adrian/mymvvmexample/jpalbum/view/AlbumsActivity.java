@@ -22,7 +22,7 @@ public class AlbumsActivity extends BindingActivity<ActivityAlbumsBinding, Album
 
     @Override
     public int getVariable() {
-        return BR.albumsVM;
+        return BR.viewModel;
     }
 
     @Override

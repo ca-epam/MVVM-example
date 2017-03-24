@@ -4,7 +4,7 @@
     <data>
 
         <variable
-            name="todosVM"
+            name="viewModel"
             type="com.example.adrian.mymvvmexample.jptodo.viewmodel.TodosViewModel" />
 
     </data>
@@ -20,9 +20,9 @@
             android:id="@+id/rvTodos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:listItemLayout="@{todosVM.todoItemLayoutId}"
-            app:listItems="@{todosVM.todoItemViewModels}"
-            app:variableId="@{todosVM.variableId}" />
+            app:listItemLayout="@{viewModel.todoItemLayoutId}"
+            app:listItems="@{viewModel.todoItemViewModels}"
+            app:variableId="@{viewModel.variableId}" />
 
     </LinearLayout>
 

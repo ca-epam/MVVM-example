@@ -22,7 +22,7 @@ public class CommentsActivity extends BindingActivity<ActivityCommentsBinding, C
 
     @Override
     public int getVariable() {
-        return BR.commentsVM;
+        return BR.viewModel;
     }
 
     @Override

@@ -22,7 +22,7 @@ public class PhotosActivity extends BindingActivity<ActivityPhotosBinding, Photo
 
     @Override
     public int getVariable() {
-        return BR.photosVM;
+        return BR.viewModel;
     }
 
     @Override
