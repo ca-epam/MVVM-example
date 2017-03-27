@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
+import com.example.adrian.mymvvmexample.jsonplaceholderlist.view.JsonPlaceholderListActivity;
 
 /**
  * Created by Adrian_Czigany on 3/16/2017.

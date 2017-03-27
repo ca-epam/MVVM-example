@@ -19,7 +19,7 @@
             android:text="JsonPlaceholder Api" />
 
         <Button
-            android:id="@+id/btnOpenJsonPlaceholderApiList"
+            android:id="@+id/btnOpenJsonPlaceholderList"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="JsonPlaceholder list"

@@ -34,6 +34,11 @@ public class JsonPlaceholderActivity extends BaseActivity implements JsonPlaceho
         JsonPlaceholderComponent.Injector.buildComponent(this).inject(this);
     }
 
+    @OnClick(R.id.btnOpenJsonPlaceholderList)
+    public void onClickBtnOpenJsonPlaceholderList() {
+        jsonPlaceholderPresenter.onClickBtnOpenJsonPlaceholderList();
+    }
+
     @OnClick(R.id.btnFindAllPost)
     public void onClickBtnFindAllPost() {
         jsonPlaceholderPresenter.onClickBtnFindAllPost();
@@ -63,5 +68,8 @@ public class JsonPlaceholderActivity extends BaseActivity implements JsonPlaceho
     public void onClickBtnFindAllUser() {
         jsonPlaceholderPresenter.onClickBtnFindAllUser();
     }
+
+
+
 
 }

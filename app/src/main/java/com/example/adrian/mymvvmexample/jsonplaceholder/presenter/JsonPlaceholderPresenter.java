@@ -6,15 +6,18 @@ package com.example.adrian.mymvvmexample.jsonplaceholder.presenter;
 
 public interface JsonPlaceholderPresenter {
 
-    public void onClickBtnFindAllPost();
+    void onClickBtnOpenJsonPlaceholderList();
 
-    public void onClickBtnFindAllComment();
+    void onClickBtnFindAllPost();
 
-    public void onClickBtnFindAllAlbum();
+    void onClickBtnFindAllComment();
 
-    public void onClickBtnFindAllPhoto();
+    void onClickBtnFindAllAlbum();
 
-    public void onClickBtnFindAllTodo();
+    void onClickBtnFindAllPhoto();
 
-    public void onClickBtnFindAllUser();
+    void onClickBtnFindAllTodo();
+
+    void onClickBtnFindAllUser();
+
 }

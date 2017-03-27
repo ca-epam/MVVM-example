@@ -10,6 +10,7 @@ import com.example.adrian.mymvvmexample.jptodo.view.TodosActivity;
 import com.example.adrian.mymvvmexample.jpuser.view.UsersActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholder.view.JsonPlaceholderView;
+import com.example.adrian.mymvvmexample.jsonplaceholderlist.view.JsonPlaceholderListActivity;
 
 /**
  * Created by Adrian_Czigany on 3/8/2017.
@@ -23,6 +24,12 @@ public class JsonPlaceholderPresenterImpl implements JsonPlaceholderPresenter {
 
     public JsonPlaceholderPresenterImpl(JsonPlaceholderView jsonPlaceholderApiView) {
         this.jsonPlaceholderApiView = jsonPlaceholderApiView;
+    }
+
+    @Override
+    public void onClickBtnOpenJsonPlaceholderList() {
+        Intent intent = new Intent((JsonPlaceholderActivity) jsonPlaceholderApiView, JsonPlaceholderListActivity.class);
+        ((JsonPlaceholderActivity) jsonPlaceholderApiView).startActivity(intent);
     }
 
     @Override
