@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.example.adrian.mymvvmexample.databinding.ViewpagerItemLayoutBinding;
 import com.example.adrian.mymvvmexample.jsonplaceholderlist.model.DataModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -65,5 +66,13 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
 
 
+    public List<String> testData() {
+        List<String> list = new ArrayList<>();
+        list.add("item - 1");
+        list.add("item - 2");
+        list.add("item - 4");
+        list.add("item - 5");
+        return list;
+    }
 
 }
