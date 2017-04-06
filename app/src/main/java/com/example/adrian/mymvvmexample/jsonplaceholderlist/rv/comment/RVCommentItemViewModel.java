@@ -1,4 +1,4 @@
-package com.example.adrian.mymvvmexample.jpcomment.viewmodel;
+package com.example.adrian.mymvvmexample.jsonplaceholderlist.rv.comment;
 
 import android.databinding.Bindable;
 
@@ -10,11 +10,11 @@ import com.example.adrian.mymvvmexample.jsonplaceholder.model.Comment;
  * Created by Adrian_Czigany on 3/22/2017.
  */
 
-public class CommentItemViewModel extends ListItemViewModel {
+public class RVCommentItemViewModel extends ListItemViewModel {
 
     private Comment comment;
 
-    public CommentItemViewModel(Comment comment) {
+    public RVCommentItemViewModel(Comment comment) {
         this.comment = comment;
     }
 

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.adrian.mymvvmexample.jsonplaceholderlist.viewpager.ViewPagerViewModel" />
+    </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -12,18 +19,21 @@
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
 
-            <TextView
-            android:id="@+id/tvViewPagerText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="42dp" />
+            <!--<TextView-->
+            <!--android:id="@+id/tvViewPagerText"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="42dp" />-->
 
-            <!--<android.support.v7.widget.RecyclerView-->
-                <!--android:id="@+id/rvList"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent">-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:listItemLayout="@{viewModel.itemLayoutId}"
+                app:listItems="@{viewModel.itemViewModels}"
+                app:variableId="@{viewModel.variableId}">
 
-            <!--</android.support.v7.widget.RecyclerView>-->
+            </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
 

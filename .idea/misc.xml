@@ -5,7 +5,7 @@
     <option name="formatter" value="ECLIPSE" />
     <option name="id" value="1490602289821" />
     <option name="name" value="default" />
-    <option name="pathToConfigFileJava" value="$PROJECT_DIR$/../androidapp/ide/eclipse_formatter.xml" />
+    <option name="pathToConfigFileJava" value="C:/git/androidapp/ide/eclipse_formatter.xml" />
     <option name="selectedJavaProfile" value="Hermes_Formatter_1.5" />
   </component>
   <component name="EntryPointsManager">

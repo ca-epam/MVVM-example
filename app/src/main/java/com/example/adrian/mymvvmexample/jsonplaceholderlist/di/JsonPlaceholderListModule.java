@@ -2,10 +2,11 @@ package com.example.adrian.mymvvmexample.jsonplaceholderlist.di;
 
 import com.example.adrian.mymvvmexample.base.di.ActivityScope;
 import com.example.adrian.mymvvmexample.jpcomment.model.CommentsModel;
-import com.example.adrian.mymvvmexample.jppost.model.PostsModel;
 import com.example.adrian.mymvvmexample.jsonplaceholder.di.JsonPlaceholderServiceModule;
-import com.example.adrian.mymvvmexample.jsonplaceholderlist.model.JsonPlaceholderDataModel;
+import com.example.adrian.mymvvmexample.jsonplaceholder.service.CommentService;
 import com.example.adrian.mymvvmexample.jsonplaceholderlist.model.JsonPlaceholderListModel;
+import com.example.adrian.mymvvmexample.jsonplaceholderlist.model.RVDataModel;
+import com.example.adrian.mymvvmexample.jsonplaceholderlist.rv.comment.RVCommentsViewModel;
 import com.example.adrian.mymvvmexample.jsonplaceholderlist.view.JsonPlaceholderListActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholderlist.viewmodel.JsonPlaceholderListViewModel;
 
@@ -39,15 +40,33 @@ public class JsonPlaceholderListModule {
 
     @ActivityScope
     @Provides
-    JsonPlaceholderListViewModel providesJsonPlaceholderListViewModel(JsonPlaceholderListActivity jsonPlaceholderListActivity, JsonPlaceholderListModel jsonPlaceholderListModel) {
-        return new JsonPlaceholderListViewModel(jsonPlaceholderListActivity, jsonPlaceholderListModel);
+    CommentsModel providesCommentsModel(CommentService commentService) {
+        return new CommentsModel(commentService);
     }
 
     @ActivityScope
     @Provides
-    JsonPlaceholderDataModel providesJsonPlaceholderDataModel(PostsModel postsModel, CommentsModel commentsModel) {
-        return new JsonPlaceholderDataModel(postsModel, commentsModel);
-
+    RVCommentsViewModel providesRvCommentsViewModel(CommentsModel commentsModel) {
+        return new RVCommentsViewModel(commentsModel);
     }
+
+    @ActivityScope
+    @Provides
+    RVDataModel providesRvDataModel(RVCommentsViewModel rvCommentsViewModel) {
+        return new RVDataModel(rvCommentsViewModel);
+    }
+
+    @ActivityScope
+    @Provides
+    JsonPlaceholderListViewModel providesJsonPlaceholderListViewModel(JsonPlaceholderListActivity jsonPlaceholderListActivity, RVDataModel rvDataModel) {
+        return new JsonPlaceholderListViewModel(jsonPlaceholderListActivity, rvDataModel);
+    }
+
+//    @ActivityScope
+//    @Provides
+//    JsonPlaceholderDataModel providesJsonPlaceholderDataModel(PostsModel postsModel, CommentsModel commentsModel) {
+//        return new JsonPlaceholderDataModel(postsModel, commentsModel);
+//    }
+
 
 }

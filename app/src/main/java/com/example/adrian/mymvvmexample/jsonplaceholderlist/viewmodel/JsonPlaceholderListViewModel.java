@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.adrian.mymvvmexample.base.BaseViewModel;
 import com.example.adrian.mymvvmexample.jsonplaceholderlist.model.JsonPlaceholderListModel;
+import com.example.adrian.mymvvmexample.jsonplaceholderlist.model.RVDataModel;
 import com.example.adrian.mymvvmexample.jsonplaceholderlist.model.TestData;
 import com.example.adrian.mymvvmexample.jsonplaceholderlist.view.JsonPlaceholderListActivity;
 import com.example.adrian.mymvvmexample.jsonplaceholderlist.viewpager.ViewPagerAdapter;
@@ -24,10 +25,11 @@ public class JsonPlaceholderListViewModel extends BaseViewModel<JsonPlaceholderL
 
     private TabLayout tabLayout;
 
-    public JsonPlaceholderListViewModel(JsonPlaceholderListActivity jsonPlaceholderListActivity, JsonPlaceholderListModel jsonPlaceholderListModel) {
-        super(jsonPlaceholderListActivity);
-        this.jsonPlaceholderListModel = jsonPlaceholderListModel;
+    private RVDataModel rvDataModel;
 
+    public JsonPlaceholderListViewModel(JsonPlaceholderListActivity jsonPlaceholderListActivity, RVDataModel rvDataModel) {
+        super(jsonPlaceholderListActivity);
+        this.rvDataModel = rvDataModel;
         init();
     }
 
@@ -37,7 +39,9 @@ public class JsonPlaceholderListViewModel extends BaseViewModel<JsonPlaceholderL
         tabLayout = getActivity().getBinding().tabLayout;
 
         getActivity().setSupportActionBar(toolbar);
-        viewPager.setAdapter(new ViewPagerAdapter(getActivity(), TestData.getDataModelList(), TestData.getTitles()));
+        //        viewPager.setAdapter(new ViewPagerAdapter(getActivity(), TestData.getDataModelList(), TestData.getTitles()));
+
+        viewPager.setAdapter(new ViewPagerAdapter(getActivity(), rvDataModel.getRvCommentsViewModel(), TestData.getTitles()));
         tabLayout.setupWithViewPager(viewPager);
     }
 
